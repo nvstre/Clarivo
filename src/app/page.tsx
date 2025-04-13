@@ -1,11 +1,21 @@
 'use client'
 
 import { useState } from 'react'
+import { NavBar } from './components/Navbar'  // Correct the import here
+import { Home as HomeIcon, User, Briefcase, FileText } from 'lucide-react'
+import { FlickeringGrid } from './components/FlickeringGrid'; // Adjust the path based on your folder structure
 
 export default function Home() {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [response, setResponse] = useState('')
+
+  const navItems = [
+    { name: 'Home', url: '#', icon: HomeIcon },
+    { name: 'About', url: '#', icon: User },
+    { name: 'Projects', url: '#', icon: Briefcase },
+    { name: 'Resume', url: '#', icon: FileText }
+  ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -15,8 +25,7 @@ export default function Home() {
     setResponse('')
 
     try {
-      // Call the backend API route that interacts with Hugging Face
-      const res = await fetch(' /api/chat', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt: input }),
@@ -33,8 +42,21 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0f0f0f] text-white flex flex-col items-center justify-center px-4">
-      <div className="max-w-2xl w-full text-center">
+    <main className="min-h-screen text-white flex flex-col items-center justify-center px-4 relative">
+      {/* Flickering Grid Background */}
+      <FlickeringGrid
+        squareSize={4} // Size of the squares in the grid
+        gridGap={6} // Gap between squares
+        flickerChance={0.3} // Chance of flicker per frame
+        color="#888888" // The color of the flickering squares
+        maxOpacity={0.3} // Maximum opacity of the squares
+        className="w-full h-full absolute top-0 left-0 z-0" // Full screen and behind content
+      />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-2xl w-full text-center">
+        <NavBar items={navItems} />
+
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Your AI Life Coach</h1>
         <p className="text-gray-400 mb-10 text-lg">Tell the bot what you want to improve, and get a clear action plan.</p>
 
