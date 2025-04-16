@@ -7,11 +7,19 @@ function Hero() {
   const titles = useMemo(() => ["life", "opportunities", "potential", "growth", "success"], []);
 
   useEffect(() => {
+    let isMounted = true;
+  
     const timeoutId = setTimeout(() => {
-      setTitleNumber(titleNumber === titles.length - 1 ? 0 : titleNumber + 1);
+      if (isMounted) {
+        setTitleNumber(prev => (prev === titles.length - 1 ? 0 : prev + 1));
+      }
     }, 2000);
-    return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
+  
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
+  }, [titleNumber, titles]);  
 
   return (
     <div className="w-full">
@@ -40,7 +48,7 @@ function Hero() {
               </span>
             </h1>
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-            Transform your life today with clear, actionable steps to break through limitations and unlock your true potential. It's time to take charge and become the person you've always aspired to be.
+            test test test
             </p>
           </div>
         </div>
