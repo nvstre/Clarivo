@@ -12,24 +12,13 @@ interface NavItem {
 }
 
 interface NavBarProps {
-  items: NavItem[]
+  items: NavItem[] 
   className?: string
 }
 
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
+  
   return (
     <div className={`fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6 ${className}`}>
       <div className="flex items-center gap-3 bg-[#0f0f0f]/70 backdrop-blur-md py-2 px-4 rounded-full shadow-xl">

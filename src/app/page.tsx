@@ -25,6 +25,7 @@ export default function Home() {
   
     setLoading(true);
     setResponse('');
+    setShowChat(true);  // Show chat after submission
   
     try {
       const res = await fetch('/api/chat', {
