@@ -42,7 +42,7 @@ export function NavBar({ items, className }: NavBarProps) {
               key={item.name}
               href={item.url}
               onClick={() => setActiveTab(item.name)}
-              className={`relative cursor-pointer text-sm font-semibold px-6 py-2 rouned-full transition-colors text-white/80 hover:text-[#FFA500] ${isActive ? "bg-[#FFA500] text-black" : ""}`}
+              className={`relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors text-white/80 hover:text-[#FFA500] ${isActive ? "bg-[#FFA500] text-black" : ""}`}
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
