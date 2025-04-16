@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MoveRight, PhoneCall } from "lucide-react";
+
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(() => ["amazing", "new", "wonderful", "beautiful", "smart"], []);
+  const titles = useMemo(() => ["life", "opportunities", "potential", "growth", "success"], []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -19,7 +19,7 @@ function Hero() {
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-              <span className="text-spektr-cyan-50">This is something</span>
+              <span className="text-spektr-cyan-50">Change your life and embrace new</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
@@ -40,7 +40,7 @@ function Hero() {
               </span>
             </h1>
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Managing a small business today is already tough. Avoid further complications by ditching outdated methods.
+            Transform your life today with clear, actionable steps to break through limitations and unlock your true potential. It's time to take charge and become the person you've always aspired to be.
             </p>
           </div>
         </div>
