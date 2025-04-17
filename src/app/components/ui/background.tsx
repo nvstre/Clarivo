@@ -148,6 +148,14 @@ export function BeamsBackground({
         drawBeam(ctx, beam);
       });
 
+      // Apply a longer fading effect to the bottom of the canvas
+      const gradient = ctx.createLinearGradient(0, canvas.height - 100, 0, canvas.height);
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+      gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, canvas.height - 100, canvas.width, 100); // Extended the gradient to 100px
+
       animationFrameRef.current = requestAnimationFrame(animate);
     }
 

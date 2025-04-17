@@ -145,14 +145,14 @@ function Header1() {
                     <p className="font-bold text-3xl">Clarivo</p>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button variant="ghost" className="hidden md:inline">
+                    <Button variant="ghost" className="hidden md:inline hover:bg-[#F0F7FA]">
                         Contact Us
                     </Button>
                     <div className="border-r hidden md:inline"></div>
                     <Button variant="outline">Sign in</Button>
-                    <Button className="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6]">
-Get Started
-</Button>
+                    <Button className="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D]">
+                    Get Started
+                    </Button>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>

@@ -1,6 +1,10 @@
 import { Hero } from "./components/ui/animated-hero";
 import { BeamsBackground } from "./components/ui/background";
-import { Header1 } from "./components/ui/header"; // Import Header1
+import { Header1 } from "./components/ui/header"; 
+import { ContainerScroll } from "./components/ui/container-scroll-animation";
+import Image from "next/image"; // Importing from next/image for optimized loading
+import React from "react"
+import { FeaturesSectionWithBentoGrid } from "./components/ui/feature-section-with-bento-grid"
 
 export default function Home() {
   return (
@@ -10,7 +14,7 @@ export default function Home() {
 
       {/* Beams Background Section */}
       <section className="absolute inset-0 z-0">
-        <BeamsBackground /> {/* Add the Beams Background here */}
+        <BeamsBackground />
       </section>
 
       {/* Hero Section */}
@@ -18,43 +22,63 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* Tablet Preview Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
-        <div className="text-center text-2xl text-muted-foreground">
-          Tablet preview placeholder
-        </div>
+      {/* Tablet Preview Section with Scroll Animation */}
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
+        <ContainerScroll
+          titleComponent={
+            <>
+              <h1 className="text-4xl font-semibold text-black dark:text-white">
+              Transform Your Life <br />
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Interactively
+                </span>
+              </h1>
+            </>
+          }
+        >
+          <Image
+            src="/2025.png"  // Use the correct path to your image here
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
       </section>
 
       {/* Features Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
-        <div className="text-center text-2xl text-muted-foreground">
-          Features section placeholder
-        </div>
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
+      <div className="min-h-screen w-full">
+      <div className="absolute top-0 left-0 w-full">
+        <FeaturesSectionWithBentoGrid />
+      </div>
+    </div>
       </section>
 
       {/* Reviews Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="text-center text-2xl text-muted-foreground">
           Reviews section placeholder
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="text-center text-2xl text-muted-foreground">
           Pricing section placeholder
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="text-center text-2xl text-muted-foreground">
           Blog section placeholder
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 border-t border-border relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="text-center text-2xl text-muted-foreground">
           FAQ section placeholder
         </div>
