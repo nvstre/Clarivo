@@ -57,7 +57,7 @@
   --secondary-foreground: #0E1C36; /* Dark Navy */
   --muted: #AFCBFF; /* Soft Blue */
   --muted-foreground: #0E1C36; /* Dark Navy */
-  --accent: #F9FBF2; /* Off White */
+  --accent: #F0F7FA; /* Off White (updated) */
   --accent-foreground: #0E1C36; /* Dark Navy */
   --destructive: #FF6F61; /* Destructive color (sample red) */
   --border: #AFCBFF; /* Soft Blue */
@@ -91,7 +91,7 @@
   --secondary-foreground: #FFFFFF; /* White */
   --muted: #AFCBFF; /* Soft Blue */
   --muted-foreground: #0E1C36; /* Dark Navy */
-  --accent: #F9FBF2; /* Off White */
+  --accent: #F0F7FA; /* Off White (updated) */
   --accent-foreground: #0E1C36; /* Dark Navy */
   --destructive: #FF6F61; /* Destructive color */
   --border: #AFCBFF; /* Soft Blue */
