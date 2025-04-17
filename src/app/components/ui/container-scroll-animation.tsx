@@ -2,13 +2,13 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
-export const ContainerScroll = ({
-  titleComponent,
-  children,
-}: {
+// Define types for the props
+interface ContainerScrollProps {
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
-}) => {
+}
+
+export const ContainerScroll = ({ titleComponent, children }: ContainerScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -54,7 +54,13 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+// Define types for the props of the Header component
+interface HeaderProps {
+  translate: MotionValue<number>;
+  titleComponent: string | React.ReactNode;
+}
+
+export const Header = ({ translate, titleComponent }: HeaderProps) => {
   return (
     <motion.div
       style={{
@@ -67,16 +73,20 @@ export const Header = ({ translate, titleComponent }: any) => {
   );
 };
 
-export const Card = ({
-  rotate,
-  scale,
-  children,
-}: {
+// Define types for the props of the Card component
+interface CardProps {
   rotate: MotionValue<number>;
   scale: MotionValue<number>;
   translate: MotionValue<number>;
   children: React.ReactNode;
-}) => {
+}
+
+export const Card = ({
+  rotate,
+  scale,
+  translate,
+  children,
+}: CardProps) => {
   return (
     <motion.div
       style={{
@@ -87,7 +97,7 @@ export const Card = ({
       }}
       className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+      <div className=" h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
         {children}
       </div>
     </motion.div>
