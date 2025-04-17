@@ -44,8 +44,8 @@ export function BeamsBackground({
   intensity = "strong",
 }: AnimatedGradientBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const beamsRef = useRef<Beam[]>([]);
-  const animationFrameRef = useRef<number>(0);
+  const beamsRef = useRef<Beam[]>([]); // Store beams in a ref
+  const animationFrameRef = useRef<number>(0); // Store animation frame ID
   const MINIMUM_BEAMS = 20;
 
   const opacityMap = {
@@ -69,8 +69,7 @@ export function BeamsBackground({
       canvas.style.height = `${window.innerHeight}px`;
       ctx.scale(dpr, dpr);
 
-      const totalBeams = MINIMUM_BEAMS * 1.5;
-      beamsRef.current = Array.from({ length: totalBeams }, () =>
+      beamsRef.current = Array.from({ length: MINIMUM_BEAMS * 1.5 }, () =>
         createBeam(canvas.width, canvas.height)
       );
     };
@@ -78,7 +77,7 @@ export function BeamsBackground({
     updateCanvasSize();
     window.addEventListener("resize", updateCanvasSize);
 
-    function resetBeam(beam: Beam, index: number, totalBeams: number) {
+    function resetBeam(beam: Beam, index: number) {
       if (!canvas) return beam;
 
       const column = index % 3;
@@ -137,14 +136,13 @@ export function BeamsBackground({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.filter = "blur(35px)";
 
-      const totalBeams = beamsRef.current.length;
       beamsRef.current.forEach((beam, index) => {
         beam.y -= beam.speed;
         beam.pulse += beam.pulseSpeed;
 
         // Reset the beam when it moves out of the canvas
         if (beam.y + beam.length < -100) {
-          resetBeam(beam, index, totalBeams);
+          resetBeam(beam, index);
         }
 
         drawBeam(ctx, beam);
