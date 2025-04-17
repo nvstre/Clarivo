@@ -5,6 +5,9 @@ import { ContainerScroll } from "./components/ui/container-scroll-animation";
 import Image from "next/image"; // Importing from next/image for optimized loading
 import React from "react"
 import { FeaturesSectionWithBentoGrid } from "./components/ui/feature-section-with-bento-grid"
+import { Blog } from "./components/ui/blog-section"
+import { Footer2 } from "./components/ui/footer2"
+
 
 export default function Home() {
   return (
@@ -12,7 +15,7 @@ export default function Home() {
       {/* Header Section */}
       <Header1 /> 
 
-      {/* Beams Background Section */}
+      {/* Beams Background Section */}  
       <section className="absolute inset-0 z-0">
         <BeamsBackground />
       </section>
@@ -56,13 +59,6 @@ export default function Home() {
     </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
-        <div className="text-center text-2xl text-muted-foreground">
-          Reviews section placeholder
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="text-center text-2xl text-muted-foreground">
@@ -72,8 +68,8 @@ export default function Home() {
 
       {/* Blog Section */}
       <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
-        <div className="text-center text-2xl text-muted-foreground">
-          Blog section placeholder
+        <div className="w-full">
+          <Blog />
         </div>
       </section>
 
@@ -86,7 +82,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-border py-10 px-6 text-center text-sm text-muted-foreground relative z-10">
-        &copy; {new Date().getFullYear()} AI Goal Coach. All rights reserved.
+      <Footer2 />
       </footer>
     </main>
   );
