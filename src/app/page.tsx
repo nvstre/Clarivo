@@ -9,6 +9,7 @@ import { FeaturesSectionWithBentoGrid } from "./components/ui/feature-section-wi
 import { Blog } from "./components/ui/blog-section";
 import { Footer2 } from "./components/ui/footer2";
 import { PricingCard } from "./components/ui/PricingCard"; 
+import { FAQ } from "./components/ui/faq-section"
 
 export default function Home() {
   return (
@@ -134,7 +135,7 @@ export default function Home() {
       {/* FAQ Section (Placeholder) */}
       <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div className="w-full max-w-4xl">
-          FAQ section placeholder
+           <FAQ />
         </div>
       </section>
 
