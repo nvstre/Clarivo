@@ -121,3 +121,6 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}

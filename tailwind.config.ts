@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",  // Add this to include the components folder
+    "./components/**/*.{js,ts,jsx,tsx}", // Add this to include the components folder
   ],
   theme: {
     extend: {
@@ -13,6 +13,18 @@ module.exports = {
         accent2: '#D7F9FF',
         accent3: '#AFCBFF',
       },
+      maxWidth: {
+        container: "1280px",
+      },
+      animation: {
+        marquee: 'marquee var(--duration) linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
+        }
+      }
     },
   },
   plugins: [],

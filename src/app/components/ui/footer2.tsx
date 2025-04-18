@@ -34,10 +34,10 @@ interface MenuItem {
       {
         title: "Product",
         links: [
-          { text: "Features ", url: "#" },
-          { text: "Pricing", url: "#" },
-          { text: "Reviews", url: "#" },
-          { text: "FAQ", url: "#" },
+          { text: "Features ", url: "#features" },
+          { text: "Pricing", url: "#price" },
+          { text: "Reviews", url: "#reviews" },
+          { text: "FAQ", url: "#faq" },
         ],
       },
       {
