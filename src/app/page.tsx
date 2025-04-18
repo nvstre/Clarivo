@@ -42,7 +42,7 @@ export default function Home() {
   ];
 
   // Video source file path
-  const videoSrc = "/yeat.mp4";  // Correct path to the video file in the public folder
+  const videoSrc = "/yeat2.mp4";  // Correct path to the video file in the public folder
 
   // Ensure VideoPlayer expects 'src' prop
   const VideoPlayerComponent = () => {
