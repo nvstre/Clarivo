@@ -28,14 +28,14 @@ function createBeam(width: number, height: number): Beam {
   return {
     x: Math.random() * width * 1.5 - width * 0.25,
     y: Math.random() * height * 1.5 - height * 0.25,
-    width: 30 + Math.random() * 60,
-    length: height * 2.5,
+    width: 80 + Math.random() * 120,
+    length: height * 3,
     angle: angle,
-    speed: 0.6 + Math.random() * 1.2,
-    opacity: 0.3 + Math.random() * 0.2,
-    hue: Math.random() < 0.5 ? 220 : 190, // 220 = Soft Blue, 190 = Light Cyan
+    speed: 0.8 + Math.random() * 1.5,
+    opacity: 0.6 + Math.random() * 0.3,
+    hue: Math.random() < 0.5 ? 220 : 190,
     pulse: Math.random() * Math.PI * 2,
-    pulseSpeed: 0.02 + Math.random() * 0.03,
+    pulseSpeed: 0.03 + Math.random() * 0.04,
   };
 }
 
@@ -49,9 +49,9 @@ export function BeamsBackground({
   const MINIMUM_BEAMS = 20;
 
   const opacityMap = {
-    subtle: 0.7,
-    medium: 0.85,
-    strong: 1,
+    subtle: 0.9,
+    medium: 1,
+    strong: 1.2,
   };
 
   useEffect(() => {
@@ -102,30 +102,35 @@ export function BeamsBackground({
 
       const pulsingOpacity =
         beam.opacity *
-        (0.8 + Math.sin(beam.pulse) * 0.2) *
+        (0.9 + Math.sin(beam.pulse) * 0.1) *
         opacityMap[intensity];
 
       const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
       gradient.addColorStop(0, `hsla(${beam.hue}, 100%, 85%, 0)`);
       gradient.addColorStop(
         0.1,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.7})`
+        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.8})`
       );
       gradient.addColorStop(
-        0.4,
+        0.3,
         `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 1.2})`
       );
       gradient.addColorStop(
-        0.6,
+        0.5,
         `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 1.2})`
+      );
+      gradient.addColorStop(
+        0.7,
+        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.8})`
       );
       gradient.addColorStop(
         0.9,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.7})`
+        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.4})`
       );
       gradient.addColorStop(1, `hsla(${beam.hue}, 100%, 85%, 0)`);
 
       ctx.fillStyle = gradient;
+      ctx.globalAlpha = 0.5;
       ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
       ctx.restore();
     }
@@ -185,15 +190,23 @@ export function BeamsBackground({
       <motion.div
         className="absolute inset-0 bg-white/5"
         animate={{
-          opacity: [0.05, 0.15, 0.05],
+          opacity: [0.1, 0.2, 0.1],
         }}
         transition={{
-          duration: 10,
+          duration: 8,
           ease: "easeInOut",
           repeat: Number.POSITIVE_INFINITY,
         }}
         style={{
-          backdropFilter: "blur(50px)",
+          backdropFilter: "blur(40px)",
+        }}
+      />
+
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-white"
+        style={{
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)"
         }}
       />
 

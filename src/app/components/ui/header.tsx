@@ -1,6 +1,15 @@
 "use client";
 
-import { Button } from "./button2";
+import React, { useState, useEffect, useId } from "react";
+import { Button } from "./button";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "./dialog";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -10,8 +19,13 @@ import {
     NavigationMenuTrigger,
 } from "./navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { SignInDialog } from "./sign-in-dialog";
+import { HeaderSignUpDialog } from "./header-signup-dialog";
 
 function Header1() {
     const navigationItems = [
@@ -119,11 +133,11 @@ function Header1() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex justify-end w-full gap-4">
+                <div className="flex items-center gap-4 justify-end">
                     <Button variant="ghost" className="hidden md:inline hover:bg-[#F0F7FA]">Contact Us</Button>
-                    <div className="border-r hidden md:inline"></div>
-                    <Button variant="outline">Sign in</Button>
-                    <Button className="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D]">Get Started</Button>
+                    <div className="border-r h-6 hidden md:inline"></div>
+                    <SignInDialog />
+                    <HeaderSignUpDialog />
                 </div>
 
                 {/* Mobile Menu */}
@@ -162,4 +176,4 @@ function Header1() {
     );
 }
 
-export { Header1 };
+export default Header1;

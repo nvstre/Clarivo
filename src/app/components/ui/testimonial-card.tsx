@@ -40,7 +40,7 @@ export function TestimonialCard({
           <AvatarImage src={author.avatar} alt={author.name} />
         </Avatar>
         <div className="flex flex-col items-start">
-          <h3 className="text-md font-semibold leading-none">
+          <h3 className="text-md font-semibold leading-none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
             {author.name}
           </h3>
           <p className="text-sm text-muted-foreground">
@@ -49,7 +49,9 @@ export function TestimonialCard({
         </div>
       </div>
       <p className="sm:text-md mt-4 text-sm text-muted-foreground">
-        {text}
+        <span className="font-medium bg-clip-text text-transparent bg-gradient-to-br from-zinc-700 to-zinc-900 dark:from-zinc-200 dark:to-zinc-400">
+          {text}
+        </span>
       </p>
     </Card>
   )

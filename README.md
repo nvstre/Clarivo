@@ -15,7 +15,7 @@ AI Goal Coach is a web app that gives you clear direction, actionable steps, and
 
 ## 💡 The Vision
 
-We’re building more than a tool — we're building a system to guide personal transformation using AI. Not just productivity hacks. Real change.
+We're building more than a tool — we're building a system to guide personal transformation using AI. Not just productivity hacks. Real change.
 
 ## 🛠️ Built With
 
@@ -39,3 +39,48 @@ git clone https://github.com/yourname/ai-goal-coach
 cd ai-goal-coach
 npm install
 npm run dev
+
+```
+
+# Clarivo - AI-Powered Life Transformation Platform
+
+Clarivo is a modern web application that helps users transform their lives through AI-powered guidance and personalized coaching.
+
+## Features
+
+- Interactive AI coaching
+- Personalized goal tracking
+- Progress visualization
+- Responsive design
+- Modern UI with animations
+
+## Tech Stack
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Shadcn UI
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+- `/src/app` - Next.js app router pages and components
+- `/src/components` - Reusable UI components
+- `/public` - Static assets
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

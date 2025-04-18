@@ -46,12 +46,11 @@ export function FeaturesSectionWithBentoGrid() {
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-            Unlock Your Full Potential with AI
+          Unlock Your Full Potential with AI
         </h4>
-
         <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-            From personalized coaching to adaptive progress tracking, 
-            our AI platform revolutionizes self-improvement by offering tailored advice and resources.
+          From personalized coaching to adaptive progress tracking, 
+          our AI platform revolutionizes self-improvement by offering tailored advice and resources.
         </p>
       </div>
 
@@ -78,31 +77,48 @@ const FeatureCard = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
+    <motion.div 
+      className={cn(
+        `p-4 sm:p-8 relative overflow-hidden`,
+        "transition-all duration-300",
+        "hover:bg-gradient-to-br hover:from-white/50 hover:to-white/30 dark:hover:from-zinc-900/50 dark:hover:to-zinc-900/30",
+        className
+      )}
+      whileHover={{ scale: 1.01 }}
+      transition={{ duration: 0.2 }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
+    <motion.p 
+      className="max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {children}
-    </p>
+    </motion.p>
   );
 };
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p
+    <motion.p
       className={cn(
         "text-sm md:text-base max-w-4xl text-left mx-auto",
         "text-neutral-500 text-center font-normal dark:text-neutral-300",
         "text-left max-w-sm mx-0 md:text-sm my-2"
       )}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
     >
       {children}
-    </p>
+    </motion.p>
   );
 };
 

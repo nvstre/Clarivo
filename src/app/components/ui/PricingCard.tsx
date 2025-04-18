@@ -56,15 +56,16 @@ export const PricingCard = ({
           "relative h-full w-full overflow-hidden border",
           "dark:border-zinc-700 dark:bg-gradient-to-br dark:from-zinc-950/50 dark:to-zinc-900/80",
           "border-zinc-200 bg-gradient-to-br from-zinc-50/50 to-zinc-100/80",
-          "p-6",
+          "p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]",
+          "hover:border-blue-500/20 dark:hover:border-blue-500/30",
           className,
         )}
       >
         <div className="flex flex-col items-center border-b pb-6 dark:border-zinc-700 border-zinc-200">
-          <span className="mb-6 inline-block dark:text-zinc-50 text-zinc-900">
+          <span className="mb-6 inline-block dark:text-zinc-50 text-zinc-900 text-lg font-medium">
             {tier}
           </span>
-          <span className="mb-3 inline-block text-4xl font-medium">
+          <span className="mb-3 inline-block text-4xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
             {price}
           </span>
           <span className="dark:bg-gradient-to-br dark:from-zinc-200 dark:to-zinc-500 bg-gradient-to-br from-zinc-700 to-zinc-900 bg-clip-text text-center text-transparent">
@@ -78,7 +79,7 @@ export const PricingCard = ({
         </div>
         <Button
           className="w-full"
-          variant={tier === "Pro" ? "default" : "ghost"}
+          variant={tier === "Pro" ? "default" : "outline"}
         >
           {CTA}
         </Button>

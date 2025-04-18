@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "./testimonial-card"
 
@@ -34,16 +36,15 @@ export function TestimonialsSection({
           </p>
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {[...Array(4)].map((_, setIndex) => (
-                testimonials.map((testimonial, i) => (
-                  <TestimonialCard 
-                    key={`${setIndex}-${i}`}
-                    {...testimonial}
-                  />
-                ))
+        <div className="relative w-full overflow-hidden">
+          <div className="flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row">
+            <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-row">
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard 
+                  key={i}
+                  {...testimonial}
+                  className="min-w-[280px] sm:min-w-[320px]"
+                />
               ))}
             </div>
           </div>
