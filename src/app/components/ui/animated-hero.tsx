@@ -58,7 +58,7 @@ export function Hero() {
           </div>
           <div className="flex flex-row gap-3">
             <Button size="lg" className="gap-4" variant="outline">
-            Watch Demo <Search className="w-4 h-4" />
+            Watch Demo<Search className="w-4 h-4" />
             </Button>
             <Button size="lg" className="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D]">
               Sign up here <MoveRight className="w-4 h-4" />
