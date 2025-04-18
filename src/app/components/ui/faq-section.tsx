@@ -37,7 +37,7 @@ function FAQ() {
             <AccordionItem value="1">
               <AccordionTrigger>What exactly does your AI goal coach do?</AccordionTrigger>
               <AccordionContent>
-                Our AI coach helps you define goals, break them down into actionable steps, and stay on track. It’s like having a personal strategist in your pocket, 24/7.
+                Our AI coach helps you define goals, break them down into actionable steps, and stay on track. It&apos;s like having a personal strategist in your pocket, 24/7.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="2">
@@ -49,19 +49,19 @@ function FAQ() {
             <AccordionItem value="3">
               <AccordionTrigger>How is this different from ChatGPT or other AI tools?</AccordionTrigger>
               <AccordionContent>
-                Our AI is trained specifically for life improvement. It's tailored to guide users through real personal development frameworks — not just answer general questions.
+                Our AI is trained specifically for life improvement. It&apos;s tailored to guide users through real personal development frameworks — not just answer general questions.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="4">
               <AccordionTrigger>What happens if I cancel my subscription?</AccordionTrigger>
               <AccordionContent>
-                You’ll retain access until the end of your billing cycle. After that, your account will downgrade to the free plan automatically — no surprises.
+                You&apos;ll retain access until the end of your billing cycle. After that, your account will downgrade to the free plan automatically — no surprises.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="5">
               <AccordionTrigger>Can I use this on my phone?</AccordionTrigger>
               <AccordionContent>
-                Absolutely. Our web app is fully responsive and mobile-friendly, and we’re currently working on native iOS and Android apps.
+                Absolutely. Our web app is fully responsive and mobile-friendly, and we&apos;re currently working on native iOS and Android apps.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="6">
