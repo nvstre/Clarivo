@@ -20,10 +20,10 @@ function FAQ() {
               </div>
               <div className="flex gap-2 flex-col">
                 <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-left font-regular">
-                  Got questions? We’ve got answers.
+                  Got questions? We&apos;ve got answers.
                 </h4>
                 <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground text-left">
-                  Whether you're curious about how ClarioAI works or wondering how the free plan compares — this section covers our most commonly asked questions.
+                  Whether you&apos;re curious about how ClarioAI works or wondering how the free plan compares — this section covers our most commonly asked questions.
                 </p>
               </div>
               <div className="">
