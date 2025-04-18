@@ -3,12 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./button";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
 } from "./dialog";
 import {
     NavigationMenu,
@@ -20,7 +14,6 @@ import {
 } from "./navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { SignInDialog } from "./sign-in-dialog";
 import { HeaderSignUpDialog } from "./header-signup-dialog";
 
