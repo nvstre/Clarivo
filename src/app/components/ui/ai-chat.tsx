@@ -34,7 +34,7 @@ export function AIChat() {
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-center">Your AI Life Coach</h2>
           <p className="text-center text-muted-foreground">
-            Tell me what you want to change or improve in your life, and I'll help you create a clear path forward.
+            Tell me what you want to change or improve in your life, and I&apos;ll help you create a clear path forward.
           </p>
           
           <div className="h-[400px] overflow-y-auto space-y-4 p-4 border border-border rounded-lg">

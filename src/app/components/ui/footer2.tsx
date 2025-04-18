@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface MenuItem {
     title: string;
     links: {
@@ -24,10 +26,10 @@ interface MenuItem {
   
   const Footer2 = ({
     logo = {
-      src: "https://i1.sndcdn.com/artworks-aSDeygKC5l1z3rpR-xo8WDw-t500x500.jpg",
+      src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==",
       alt: "Clarivo",
       title: "Clarivo",
-      url: "https://i1.sndcdn.com/artworks-aSDeygKC5l1z3rpR-xo8WDw-t500x500.jpg ",
+      url: "/",
     },
     tagline = "We the best",
     menuItems = [
@@ -72,11 +74,15 @@ interface MenuItem {
               <div className="col-span-1 lg:col-span-2 mb-8 lg:mb-0">
                 <div className="flex items-center justify-center lg:justify-start gap-2">
                   <a href={logo.url}>
-                    <img
+                    <Image
                       src={logo.src}
                       alt={logo.alt}
                       title={logo.title}
-                      className="h-10"
+                      width={40}
+                      height={40}
+                      className="h-10 w-auto"
+                      priority
+                      unoptimized
                     />
                   </a>
                   <p className="text-xl font-semibold">{logo.title}</p>

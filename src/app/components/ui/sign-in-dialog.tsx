@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useId } from 'react';
-import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "./button";
-import { X } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -76,7 +75,7 @@ export const SignInDialog = () => {
         <Button variant="outline">Sign in with Google</Button>
         
         <div className="text-center text-sm text-muted-foreground">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a className="text-primary underline hover:no-underline" href="#">
             Sign up
           </a>

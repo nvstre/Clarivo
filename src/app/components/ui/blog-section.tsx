@@ -10,7 +10,6 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "./dialog";
-import Image from "next/image";
 import { useState } from "react";
 
 const articles = [

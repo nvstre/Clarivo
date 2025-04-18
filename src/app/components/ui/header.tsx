@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useId } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./button";
 import {
     Dialog,
@@ -21,9 +21,6 @@ import {
 import { Menu, MoveRight, X } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { SignInDialog } from "./sign-in-dialog";
 import { HeaderSignUpDialog } from "./header-signup-dialog";
 
@@ -101,20 +98,17 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Button size="sm" className="mt-10">
-                                                            Try it for free
-                                                        </Button>
                                                     </div>
-                                                    <div className="flex flex-col text-sm h-full justify-end">
+                                                    <div className="flex flex-col gap-2">
                                                         {item.items?.map((subItem) => (
-                                                            <NavigationMenuLink
-                                                                href={subItem.href}
+                                                            <Link
                                                                 key={subItem.title}
-                                                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
+                                                                href={subItem.href}
+                                                                className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition"
                                                             >
                                                                 <span>{subItem.title}</span>
-                                                                <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                            </NavigationMenuLink>
+                                                                <MoveRight className="w-4 h-4" />
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -127,53 +121,89 @@ function Header1() {
                     </NavigationMenu>
                 </div>
 
-                {/* Logo */}
-                <div className="flex lg:justify-center">
-                    <p className="font-bold text-3xl">Clarivo</p>
+                {/* Mobile Navbar */}
+                <div className="lg:hidden flex items-center">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setOpen(!isOpen)}
+                        className="border border-zinc-200 dark:border-zinc-700 rounded-lg"
+                    >
+                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </Button>
                 </div>
 
-                {/* Buttons */}
-                <div className="flex items-center gap-4 justify-end">
-                    <Button variant="ghost" className="hidden md:inline hover:bg-[#F0F7FA]">Contact Us</Button>
-                    <div className="border-r h-6 hidden md:inline"></div>
+                {/* Logo */}
+                <div className="flex items-center justify-center">
+                    <Link href="/" className="text-xl font-bold">
+                        Clarivo
+                    </Link>
+                </div>
+
+                {/* Auth Buttons */}
+                <div className="flex items-center justify-end gap-2">
+                    <Button variant="ghost" className="border border-border rounded-lg px-4 py-2 hover:bg-muted transition">
+                        Contact us
+                    </Button>
+                    <div className="h-6 w-px bg-border" />
                     <SignInDialog />
                     <HeaderSignUpDialog />
                 </div>
+            </div>
 
-                {/* Mobile Menu */}
-                <div className="flex w-12 shrink lg:hidden items-end justify-end">
-                    <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
-                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                    </Button>
-                    {isOpen && (
-                        <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="lg:hidden fixed inset-0 bg-background z-50">
+                    <div className="container mx-auto p-4">
+                        <div className="flex justify-end mb-4">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => setOpen(false)}
+                                className="border border-zinc-200 dark:border-zinc-700 rounded-lg"
+                            >
+                                <X className="w-5 h-5" />
+                            </Button>
+                        </div>
+                        <div className="flex flex-col gap-4">
                             {navigationItems.map((item) => (
-                                <div key={item.title}>
-                                    <div className="flex flex-col gap-2">
-                                        {item.href ? (
-                                            <Link href={item.href} className="flex justify-between items-center">
-                                                <span className="text-lg">{item.title}</span>
-                                                <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
-                                            </Link>
-                                        ) : (
-                                            <p className="text-lg">{item.title}</p>
-                                        )}
-                                        {item.items &&
-                                            item.items.map((subItem) => (
-                                                <Link key={subItem.title} href={subItem.href} className="flex justify-between items-center">
-                                                    <span className="text-muted-foreground">{subItem.title}</span>
-                                                    <MoveRight className="w-4 h-4 stroke-1" />
-                                                </Link>
-                                            ))}
-                                    </div>
+                                <div key={item.title} className="flex flex-col gap-2">
+                                    {item.href ? (
+                                        <Link
+                                            href={item.href}
+                                            className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition"
+                                            onClick={() => setOpen(false)}
+                                        >
+                                            <span>{item.title}</span>
+                                        </Link>
+                                    ) : (
+                                        <>
+                                            <div className="flex items-center gap-2 p-2 rounded-lg">
+                                                <span className="font-medium">{item.title}</span>
+                                            </div>
+                                            <div className="flex flex-col gap-2 pl-4">
+                                                {item.items?.map((subItem) => (
+                                                    <Link
+                                                        key={subItem.title}
+                                                        href={subItem.href}
+                                                        className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition"
+                                                        onClick={() => setOpen(false)}
+                                                    >
+                                                        <span>{subItem.title}</span>
+                                                        <MoveRight className="w-4 h-4" />
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             ))}
                         </div>
-                    )}
+                    </div>
                 </div>
-            </div>
+            )}
         </header>
     );
 }
 
-export default Header1;
+export { Header1 };

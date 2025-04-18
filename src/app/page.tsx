@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Hero } from "./components/ui/animated-hero";
 import { BeamsBackground } from "./components/ui/background";
-import Header1 from "./components/ui/header";
+import { Header1 } from "./components/ui/header";
 import { ContainerScroll } from "./components/ui/container-scroll-animation";
 import { FeaturesSectionWithBentoGrid } from "./components/ui/feature-section-with-bento-grid";
 import { Blog } from "./components/ui/blog-section";
@@ -12,7 +12,7 @@ import { PricingCard } from "./components/ui/PricingCard";
 import { FAQ } from "./components/ui/faq-section";
 import { TestimonialsSection } from "./components/ui/testimonials";
 import VideoPlayer from "./components/ui/video-player";
-import { SignUpDialog } from "./components/ui/animated-hero";
+import { SignInDialog } from "./components/ui/sign-in-dialog";
 
 export default function Home() {
   const testimonials = [
@@ -90,108 +90,102 @@ export default function Home() {
         </ContainerScroll>
       </section>
 
-      <div className="relative z-10">
-        <section id="features" className="relative z-20">
-          <FeaturesSectionWithBentoGrid />
-        </section>
+      <section id="features" className="py-16 relative z-10">
+        <FeaturesSectionWithBentoGrid />
+      </section>
 
-        <section id="demo" className="w-full px-6 py-12 relative z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-          <h2 className="text-3xl font-semibold text-center mb-4">See It in Action</h2>
-          <p className="text-center text-lg mb-8">
-            Discover how our AI coach transforms lives through personalized guidance, helping you break through barriers and achieve lasting change.
-          </p>
-          
-          <VideoPlayerComponent />
-          
-          <div className="text-center mt-8">
-            <SignUpDialog />
+      <section id="demo" className="w-full px-6 py-12 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        <h2 className="text-3xl font-semibold text-center mb-4">See It in Action</h2>
+        <p className="text-center text-lg mb-8">
+          Discover how our AI coach transforms lives through personalized guidance, helping you break through barriers and achieve lasting change.
+        </p>
+        
+        <VideoPlayerComponent />
+      </section>
+
+      <section id="reviews" className="py-8 flex items-center justify-center px-6 relative z-10">
+        <TestimonialsSection
+          title="Trusted by people transforming their lives"
+          description="Join a growing movement of individuals using AI to reclaim direction, build momentum, and design a meaningful future."
+          testimonials={testimonials}
+        />
+      </section>
+
+      <section id="price" className="flex items-center justify-center px-6 relative z-10 bg-gradient-to-r from-lightCyan to-softBlue">
+        <div className="relative overflow-hidden bg-background text-foreground w-full max-w-5xl py-20">
+          <div className="mb-12 space-y-3 text-center">
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+              Pricing
+            </h2>
+            <p className="text-base text-muted-foreground md:text-lg">
+              Start free and explore what&apos;s possible. When you&apos;re ready to commit to your transformation, unlock deeper guidance, smarter insights, and a personalized journey — all powered by AI.
+            </p>
           </div>
-        </section>
 
-        <section id="reviews" className="py-8 flex items-center justify-center px-6 relative z-10">
-          <TestimonialsSection
-            title="Trusted by people transforming their lives"
-            description="Join a growing movement of individuals using AI to reclaim direction, build momentum, and design a meaningful future."
-            testimonials={testimonials}
-          />
-        </section>
-
-        <section id="price" className="flex items-center justify-center px-6 relative z-10 bg-gradient-to-r from-lightCyan to-softBlue">
-          <div className="relative overflow-hidden bg-background text-foreground w-full max-w-5xl py-20">
-            <div className="mb-12 space-y-3 text-center">
-              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-                Pricing
-              </h2>
-              <p className="text-base text-muted-foreground md:text-lg">
-                Start free and explore what&apos;s possible. When you&apos;re ready to commit to your transformation, unlock deeper guidance, smarter insights, and a personalized journey — all powered by AI.
-              </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+            <div className="relative group">
+              <PricingCard
+                tier="Free"
+                price="$0/mo"
+                bestFor="Exploring your transformation journey, starting small, and getting a taste of personalized AI guidance."
+                CTA="Get started for free"
+                benefits={[
+                  { text: "Limited progress tracking", checked: true },
+                  { text: "Access to basic personalized insights", checked: true },
+                  { text: "Daily goal-setting assistance", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              <div className="relative group">
-                <PricingCard
-                  tier="Free"
-                  price="$0/mo"
-                  bestFor="Exploring your transformation journey, starting small, and getting a taste of personalized AI guidance."
-                  CTA="Get started for free"
-                  benefits={[
-                    { text: "Limited progress tracking", checked: true },
-                    { text: "Access to basic personalized insights", checked: true },
-                    { text: "Daily goal-setting assistance", checked: true },
-                  ]}
-                  className="transition-transform transform hover:scale-105"
-                />
-              </div>
+            <div className="relative group">
+              <PricingCard
+                tier="Basic"
+                price="$29/mo"
+                bestFor="Committing to a more structured, continuous journey of self-improvement with deeper insights and personalized strategies."
+                CTA="14-day free trial"
+                benefits={[
+                  { text: "Unlimited progress tracking", checked: true },
+                  { text: "Enhanced personalized insights", checked: true },
+                  { text: "Weekly check-ins for guidance optimization", checked: true },
+                  { text: "Clarivo AI support for faster responses and tailored strategies", checked: true },
+                  { text: "In-depth tracking and analysis", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
+            </div>
 
-              <div className="relative group">
-                <PricingCard
-                  tier="Basic"
-                  price="$29/mo"
-                  bestFor="Committing to a more structured, continuous journey of self-improvement with deeper insights and personalized strategies."
-                  CTA="14-day free trial"
-                  benefits={[
-                    { text: "Unlimited progress tracking", checked: true },
-                    { text: "Enhanced personalized insights", checked: true },
-                    { text: "Weekly check-ins for guidance optimization", checked: true },
-                    { text: "Clarivo AI support for faster responses and tailored strategies", checked: true },
-                    { text: "In-depth tracking and analysis", checked: true },
-                  ]}
-                  className="transition-transform transform hover:scale-105"
-                />
-              </div>
-
-              <div className="relative group">
-                <PricingCard
-                  tier="Pro"
-                  price="$57/mo"
-                  bestFor="Those who are fully committed to their transformation and want exclusive, AI guidance to unlock their full potential."
-                  CTA="Get Pro access"
-                  benefits={[
-                    { text: "All Basic Plan features", checked: true },
-                    { text: "Advanced goal tracking and progress visualization", checked: true },
-                    { text: "Unlimited personalized strategies and advanced insights", checked: true },
-                    { text: "Monthly consultations with your AI coach for fine-tuning your goals", checked: true },
-                  ]}
-                  className="transition-transform transform hover:scale-105"
-                />
-              </div>
+            <div className="relative group">
+              <PricingCard
+                tier="Pro"
+                price="$57/mo"
+                bestFor="Those who are fully committed to their transformation and want exclusive, AI guidance to unlock their full potential."
+                CTA="Get Pro access"
+                benefits={[
+                  { text: "All Basic Plan features", checked: true },
+                  { text: "Advanced goal tracking and progress visualization", checked: true },
+                  { text: "Unlimited personalized strategies and advanced insights", checked: true },
+                  { text: "Monthly consultations with your AI coach for fine-tuning your goals", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-16 flex items-center justify-center px-6 relative z-10">
-          <div className="w-full">
-            <Blog />
-          </div>
-        </section>
+      <section className="py-16 flex items-center justify-center px-6 relative z-10">
+        <div className="w-full">
+          <Blog />
+        </div>
+      </section>
 
-        <section id="faq" className="py-8 flex items-center justify-center px-6 relative z-10">
-          <div className="w-full max-w-4xl">
-            <FAQ />
-          </div>
-        </section>
-      </div>
+      <section id="faq" className="py-8 flex items-center justify-center px-6 relative z-10">
+        <div className="w-full max-w-4xl">
+          <FAQ />
+        </div>
+      </section>
 
       <footer className="border-t border-border py-1 px-100 text-center text-sm text-muted-foreground relative z-10">
         <Footer2 />
