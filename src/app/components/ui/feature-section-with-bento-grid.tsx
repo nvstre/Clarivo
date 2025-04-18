@@ -130,7 +130,7 @@ export const SkeletonOne = () => {
 export const SkeletonThree = () => {
   return (
     <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+      href="https://youtu.be/x32CsJasYwM?si=C45l5kSV-9XdPSNX"
       target="__blank"
       className="relative flex gap-10 h-full group/image"
     >

@@ -62,7 +62,7 @@ export default function Home() {
             </h2>
             <p className="text-base text-muted-foreground md:text-lg">
               Start free and explore what&apos;s possible. When you&apos;re ready to commit to your transformation, unlock deeper guidance, smarter insights, and a personalized journey — all powered by AI.
-            </p>&apos;
+            </p>
           </div>
 
           {/* Pricing Plans */}
