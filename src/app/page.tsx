@@ -12,7 +12,6 @@ import { PricingCard } from "./components/ui/PricingCard";
 import { FAQ } from "./components/ui/faq-section";
 import { TestimonialsSection } from "./components/ui/testimonials";
 import VideoPlayer from "./components/ui/video-player";
-import { SignInDialog } from "./components/ui/sign-in-dialog";
 
 export default function Home() {
   const testimonials = [
