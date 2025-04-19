@@ -354,16 +354,16 @@ const Blog = () => {
 
   return (
     <div id="blog" className="w-full py-20 lg:py-40">
-      <div className="container mx-auto flex flex-col gap-14">
-        <div className="flex w-full flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
+    <div className="container mx-auto flex flex-col gap-14">
+      <div className="flex w-full flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
           <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
-            Latest articles
-          </h4>
+          Latest articles
+        </h4>
           <Dialog open={showAllArticles} onOpenChange={setShowAllArticles}>
             <DialogTrigger asChild>
               <Button variant="outline" className="gap-4 hover:bg-muted transition-all duration-300">
-                View all articles <MoveRight className="w-4 h-4" />
-              </Button>
+          View all articles <MoveRight className="w-4 h-4" />
+        </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-background/95 backdrop-blur-sm border-none shadow-[0_0_50px_#3b82f6/30]">
               <DialogHeader>
@@ -385,7 +385,7 @@ const Blog = () => {
                         <Calendar className="w-4 h-4" />
                         <span>{article.date}</span>
                       </div>
-                    </div>
+      </div>
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                       {article.description}
                     </p>
@@ -476,7 +476,7 @@ const Blog = () => {
                 <div className="mt-6 space-y-6">
                   <div className="relative aspect-video rounded-lg overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </div>
+        </div>
                   <p className="text-muted-foreground text-lg">{article.description}</p>
                   <div className="prose prose-lg dark:prose-invert max-w-none">
                     {article.content.split('\n\n').map((paragraph, i) => (
@@ -484,15 +484,15 @@ const Blog = () => {
                         {paragraph}
                       </p>
                     ))}
-                  </div>
-                </div>
+        </div>
+        </div>
               </DialogContent>
             </Dialog>
           ))}
-        </div>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export { Blog };

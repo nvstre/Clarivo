@@ -68,7 +68,7 @@ export function Hero() {
             </a>
             <HeaderSignUpDialog 
               buttonClassName="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D]"
-              buttonText="Try it for free"
+              buttonText="Get started for free"
               size="lg"
               showArrow={true}
             />

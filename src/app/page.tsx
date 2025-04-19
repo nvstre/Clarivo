@@ -56,23 +56,23 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
+    <main className="relative min-h-screen">
       <Header1 />
 
       <section className="absolute inset-0 z-0">
         <BeamsBackground />
       </section>
 
-      <section id="home" className="relative z-20 px-4 sm:px-6">
+      <section id="home" className="relative z-20">
         <Hero />
       </section>
 
-      <section className="py-16 flex items-center justify-center px-4 sm:px-6 relative z-10">
+      <section className="py-16 flex items-center justify-center px-6 relative z-10">
         <ContainerScroll
           titleComponent={
-            <h1 className="text-3xl sm:text-4xl font-semibold text-black dark:text-white">
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
               Transform Your Life <br />
-              <span className="text-3xl sm:text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                 Interactively
               </span>
             </h1>
@@ -89,21 +89,21 @@ export default function Home() {
         </ContainerScroll>
       </section>
 
-      <section id="features" className="py-16 relative z-10 px-4 sm:px-6">
+      <section id="features" className="py-16 relative z-10">
         <FeaturesSectionWithBentoGrid />
       </section>
 
-      <section id="demo" className="w-full px-4 sm:px-6 py-12 relative z-10">
+      <section id="demo" className="w-full px-6 py-12 relative z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-4">See It in Action</h2>
-        <p className="text-center text-base sm:text-lg mb-8">
+        <h2 className="text-3xl font-semibold text-center mb-4">See It in Action</h2>
+        <p className="text-center text-lg mb-8">
           Discover how our AI coach transforms lives through personalized guidance, helping you break through barriers and achieve lasting change.
         </p>
         
         <VideoPlayerComponent />
       </section>
 
-      <section id="reviews" className="py-8 flex items-center justify-center px-4 sm:px-6 relative z-10">
+      <section id="reviews" className="py-8 flex items-center justify-center px-6 relative z-10">
         <TestimonialsSection
           title="Trusted by people transforming their lives"
           description="Join a growing movement of individuals using AI to reclaim direction, build momentum, and design a meaningful future."
@@ -111,13 +111,13 @@ export default function Home() {
         />
       </section>
 
-      <section id="price" className="flex items-center justify-center px-4 sm:px-6 relative z-10 bg-gradient-to-r from-lightCyan to-softBlue">
+      <section id="price" className="flex items-center justify-center px-6 relative z-10 bg-gradient-to-r from-lightCyan to-softBlue">
         <div className="relative overflow-hidden bg-background text-foreground w-full max-w-5xl py-20">
-          <div className="mb-12 space-y-3 text-center px-4">
-            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+          <div className="mb-12 space-y-3 text-center">
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
               Pricing
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground md:text-lg">
+            <p className="text-base text-muted-foreground md:text-lg">
               Start free and explore what&apos;s possible. When you&apos;re ready to commit to your transformation, unlock deeper guidance, smarter insights, and a personalized journey — all powered by AI.
             </p>
           </div>
