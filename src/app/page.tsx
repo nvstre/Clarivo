@@ -21,7 +21,7 @@ export default function Home() {
         handle: "@alexc_dev",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Clarivo came into my life when I was at a career crossroads. The AI coach helped me map out my strengths and create a clear path forward. 3 months later, I&apos;m in a leadership role I never thought possible! The clarity it provides is unmatched 🎯"
+      text: "Clarivo came into my life when I was at a career crossroads. The AI coach helped me map out my strengths and create a clear path forward. 3 months later, I'm in a leadership role I never thought possible! The clarity it provides is unmatched 🎯"
     },
     {
       author: {
@@ -37,7 +37,7 @@ export default function Home() {
         handle: "@marc_fit",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Clarivo&apos;s progress tracking is incredible. When my fitness journey plateaued, the AI analyzed my patterns and suggested small but powerful changes. 6 weeks in: down 12 lbs and crushing PRs I didn&apos;t think were possible. Pro tier is worth every cent 💪"
+      text: "Clarivo's progress tracking is incredible. When my fitness journey plateaued, the AI analyzed my patterns and suggested small but powerful changes. 6 weeks in: down 12 lbs and crushing PRs I didn't think were possible. Pro tier is worth every cent 💪"
     },
     {
       author: {
@@ -45,7 +45,7 @@ export default function Home() {
         handle: "@priya.creates",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "I was hesitant about another AI tool, but Clarivo is different. It&apos;s like having a mentor who evolves with you. The way it connects dots in your personal development journey is mind-blowing. 2 months with Clarivo = 3 goals achieved + newfound confidence ⭐"
+      text: "I was hesitant about another AI tool, but Clarivo is different. It's like having a mentor who evolves with you. The way it connects dots in your personal development journey is mind-blowing. 2 months with Clarivo = 3 goals achieved + newfound confidence ⭐"
     }
   ];
 
