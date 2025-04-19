@@ -21,7 +21,7 @@ export default function Home() {
         handle: "@alexc_dev",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Clarivo came into my life when I was at a career crossroads. The AI coach helped me map out my strengths and create a clear path forward. 3 months later, I'm in a leadership role I never thought possible! The clarity it provides is unmatched 🎯"
+      text: "Clarivo came into my life when I was at a career crossroads. The AI coach helped me map out my strengths and create a clear path forward. 3 months later, I&apos;m in a leadership role I never thought possible! The clarity it provides is unmatched 🎯"
     },
     {
       author: {
@@ -37,7 +37,7 @@ export default function Home() {
         handle: "@marc_fit",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Clarivo's progress tracking is incredible. When my fitness journey plateaued, the AI analyzed my patterns and suggested small but powerful changes. 6 weeks in: down 12 lbs and crushing PRs I didn't think were possible. Pro tier is worth every cent 💪"
+      text: "Clarivo&apos;s progress tracking is incredible. When my fitness journey plateaued, the AI analyzed my patterns and suggested small but powerful changes. 6 weeks in: down 12 lbs and crushing PRs I didn&apos;t think were possible. Pro tier is worth every cent 💪"
     },
     {
       author: {
@@ -45,7 +45,7 @@ export default function Home() {
         handle: "@priya.creates",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "I was hesitant about another AI tool, but Clarivo is different. It's like having a mentor who evolves with you. The way it connects dots in your personal development journey is mind-blowing. 2 months with Clarivo = 3 goals achieved + newfound confidence ⭐"
+      text: "I was hesitant about another AI tool, but Clarivo is different. It&apos;s like having a mentor who evolves with you. The way it connects dots in your personal development journey is mind-blowing. 2 months with Clarivo = 3 goals achieved + newfound confidence ⭐"
     }
   ];
 
@@ -56,112 +56,140 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full overflow-hidden">
+    <main className="relative min-h-screen w-full overflow-x-hidden">
       <Header1 />
 
       <section className="absolute inset-0 z-0">
         <BeamsBackground />
       </section>
 
-      <div className="relative z-20 max-w-[100vw] overflow-x-hidden">
-        <section id="home" className="relative">
-          <Hero />
-        </section>
+      <section id="home" className="relative z-20">
+        <Hero />
+      </section>
 
-        <section className="py-16 flex items-center justify-center px-6">
-          <ContainerScroll
-            titleComponent={
-              <h1 className="text-4xl font-semibold text-black dark:text-white">
-                Transform Your Life <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                  Interactively
-                </span>
-              </h1>
-            }
-          >
-            <Image
-              src="/2025.png"
-              alt="hero"
-              height={720}
-              width={1400}
-              className="mx-auto rounded-2xl object-cover h-full object-left-top"
-              draggable={false}
-            />
-          </ContainerScroll>
-        </section>
+      <section className="py-16 flex items-center justify-center px-6 relative z-10">
+        <ContainerScroll
+          titleComponent={
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
+              Transform Your Life <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Interactively
+              </span>
+            </h1>
+          }
+        >
+          <Image
+            src="/2025.png"
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
+      </section>
 
-        <section id="features" className="py-16">
-          <FeaturesSectionWithBentoGrid />
-        </section>
+      <section id="features" className="py-16 relative z-10">
+        <FeaturesSectionWithBentoGrid />
+      </section>
 
-        <section id="demo" className="w-full px-6 py-12">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-          <h2 className="text-3xl font-semibold text-center mb-4">See It in Action</h2>
-          <p className="text-center text-lg mb-8">
-            Discover how our AI coach transforms lives through personalized guidance, helping you break through barriers and achieve lasting change.
-          </p>
-          
-          <VideoPlayerComponent />
-        </section>
+      <section id="demo" className="w-full px-6 py-12 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        <h2 className="text-3xl font-semibold text-center mb-4">See It in Action</h2>
+        <p className="text-center text-lg mb-8">
+          Discover how our AI coach transforms lives through personalized guidance, helping you break through barriers and achieve lasting change.
+        </p>
+        
+        <VideoPlayerComponent />
+      </section>
 
-        <section id="price" className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-center mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-center text-lg mb-8">
-              Choose the plan that's right for you. No hidden fees, no surprises.
+      <section id="aews" className="py-8 flex items-center justify-center px-6 relative z-10">
+        <TestimonialsSection
+          title="Trusted by people transforming their lives"
+          description="Join a growing movement of individuals using AI to reclaim direction, build momentum, and design a meaningful future."
+          testimonials={testimonials}
+          className="w-full max-w-[90vw] md:max-w-4xl"
+        />
+      </section>
+
+      <section id="price" className="flex items-center justify-center px-6 relative z-10 bg-gradient-to-r from-lightCyan to-softBlue">
+        <div className="relative overflow-hidden bg-background text-foreground w-full max-w-5xl py-20">
+          <div className="mb-12 space-y-3 text-center">
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+              Pricing
+            </h2>
+            <p className="text-base text-muted-foreground md:text-lg">
+              Start free and explore what&apos;s possible. When you&apos;re ready to commit to your transformation, unlock deeper guidance, smarter insights, and a personalized journey — all powered by AI.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="relative group">
-                <PricingCard
-                  tier="Basic"
-                  price="$27/mo"
-                  bestFor="Perfect for those just starting their journey to self-improvement."
-                  CTA="Get Basic access"
-                  benefits={[
-                    { text: "Personalized daily guidance and insights", checked: true },
-                    { text: "Basic goal tracking and progress monitoring", checked: true },
-                    { text: "Access to core AI coaching features", checked: true },
-                    { text: "Community support and resources", checked: true },
-                  ]}
-                  className="transition-transform transform hover:scale-105"
-                />
-              </div>
+          </div>
 
-              <div className="relative group">
-                <PricingCard
-                  tier="Pro"
-                  price="$57/mo"
-                  bestFor="Those who are fully committed to their transformation and want exclusive, AI guidance to unlock their full potential."
-                  CTA="Get Pro access"
-                  benefits={[
-                    { text: "All Basic Plan features", checked: true },
-                    { text: "Advanced goal tracking and progress visualization", checked: true },
-                    { text: "Unlimited personalized strategies and advanced insights", checked: true },
-                    { text: "Monthly consultations with your AI coach for fine-tuning your goals", checked: true },
-                  ]}
-                  className="transition-transform transform hover:scale-105"
-                />
-              </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+            <div className="relative group">
+              <PricingCard
+                tier="Free"
+                price="$0/mo"
+                bestFor="Exploring your transformation journey, starting small, and getting a taste of personalized AI guidance."
+                CTA="Get started for free"
+                benefits={[
+                  { text: "Limited progress tracking", checked: true },
+                  { text: "Access to basic personalized insights", checked: true },
+                  { text: "Daily goal-setting assistance", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
+            </div>
+
+            <div className="relative group">
+              <PricingCard
+                tier="Basic"
+                price="$29/mo"
+                bestFor="Committing to a more structured, continuous journey of self-improvement with deeper insights and personalized strategies."
+                CTA="14-day free trial"
+                benefits={[
+                  { text: "Unlimited progress tracking", checked: true },
+                  { text: "Enhanced personalized insights", checked: true },
+                  { text: "Weekly check-ins for guidance optimization", checked: true },
+                  { text: "Clarivo AI support for faster responses and tailored strategies", checked: true },
+                  { text: "In-depth tracking and analysis", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
+            </div>
+
+            <div className="relative group">
+              <PricingCard
+                tier="Pro"
+                price="$57/mo"
+                bestFor="Those who are fully committed to their transformation and want exclusive, AI guidance to unlock their full potential."
+                CTA="Get Pro access"
+                benefits={[
+                  { text: "All Basic Plan features", checked: true },
+                  { text: "Advanced goal tracking and progress visualization", checked: true },
+                  { text: "Unlimited personalized strategies and advanced insights", checked: true },
+                  { text: "Monthly consultations with your AI coach for fine-tuning your goals", checked: true },
+                ]}
+                className="transition-transform transform hover:scale-105"
+              />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-16 flex items-center justify-center px-6">
-          <div className="w-full">
-            <Blog />
-          </div>
-        </section>
+      <section className="py-16 flex items-center justify-center px-6 relative z-10">
+        <div className="w-full">
+          <Blog />
+        </div>
+      </section>
 
-        <section id="faq" className="py-8 flex items-center justify-center px-6">
-          <div className="w-full max-w-4xl">
-            <FAQ />
-          </div>
-        </section>
+      <section id="faq" className="py-8 flex items-center justify-center px-6 relative z-10">
+        <div className="w-full max-w-4xl">
+          <FAQ />
+        </div>
+      </section>
 
-        <footer className="border-t border-border py-1 px-4 text-center text-sm text-muted-foreground">
-          <Footer2 />
-        </footer>
-      </div>
+      <footer className="border-t border-border py-1 px-100 text-center text-sm text-muted-foreground relative z-10">
+        <Footer2 />
+      </footer>
     </main>
   );
 }

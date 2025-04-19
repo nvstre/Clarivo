@@ -26,8 +26,8 @@ export function Hero() {
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <a href="#blog">
-              <Button variant="ghost" size="lg" className="gap-4 hover:border hover:border-border">
-                Read our launch article <MoveRight className="w-4 h-4" />
+              <Button variant="ghost" size="lg" className="gap-4 hover:border hover:border-border text-xs sm:text-base">
+                Read our launch article <MoveRight className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </a>
           </div>
@@ -60,14 +60,14 @@ export function Hero() {
               Unlock your potential with personalized AI-driven guidance, helping you achieve your goals and transform your life.
             </p>
           </div>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row gap-2 sm:gap-3">
             <a href="#demo">
-              <Button size="lg" className="gap-4 hover:scale-105 transition-transform duration-200" variant="outline">
-                Watch Demo <Search className="w-4 h-4" />
+              <Button size="lg" className="gap-4 hover:scale-105 transition-transform duration-200 text-xs sm:text-base" variant="outline">
+                Watch Demo <Search className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </a>
             <HeaderSignUpDialog 
-              buttonClassName="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D]"
+              buttonClassName="bg-blue-600 text-white shadow-[0_0_15px_#3b82f6] hover:bg-[#15397D] text-xs sm:text-base"
               buttonText="Get started for free"
               size="lg"
               showArrow={true}
