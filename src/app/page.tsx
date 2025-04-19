@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen w-full overflow-x-hidden">
       <Header1 />
 
       <section className="absolute inset-0 z-0">
@@ -103,11 +103,12 @@ export default function Home() {
         <VideoPlayerComponent />
       </section>
 
-      <section id="reviews" className="py-8 flex items-center justify-center px-6 relative z-10">
+      <section id="aews" className="py-8 flex items-center justify-center px-6 relative z-10">
         <TestimonialsSection
           title="Trusted by people transforming their lives"
           description="Join a growing movement of individuals using AI to reclaim direction, build momentum, and design a meaningful future."
           testimonials={testimonials}
+          className="w-full max-w-[90vw] md:max-w-4xl"
         />
       </section>
 

@@ -37,20 +37,20 @@ export function TestimonialsSection({
         </div>
 
         <div className="relative w-full overflow-hidden">
-          <div className="flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-row">
+          <div className="flex flex-col md:flex-row overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)]">
+            <div className="flex flex-col md:flex-row shrink-0 justify-around [gap:var(--gap)]">
               {testimonials.map((testimonial, i) => (
                 <TestimonialCard 
                   key={i}
                   {...testimonial}
-                  className="min-w-[280px] sm:min-w-[320px]"
+                  className="w-full md:min-w-[320px]"
                 />
               ))}
             </div>
           </div>
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background md:block" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background md:block" />
         </div>
       </div>
     </section>

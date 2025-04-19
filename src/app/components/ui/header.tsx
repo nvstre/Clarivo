@@ -135,10 +135,10 @@ function Header1() {
 
                 {/* Auth Buttons */}
                 <div className="flex items-center justify-end gap-2">
-                    <Button variant="ghost" className="border border-border rounded-lg px-4 py-2 hover:bg-muted transition">
+                    <Button variant="ghost" className="hidden md:flex border border-border rounded-lg px-4 py-2 hover:bg-muted transition">
                         Contact us
                     </Button>
-                    <div className="h-6 w-px bg-border" />
+                    <div className="hidden md:block h-6 w-px bg-border" />
                     <SignInDialog />
                     <HeaderSignUpDialog />
                 </div>
