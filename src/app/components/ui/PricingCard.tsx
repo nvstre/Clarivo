@@ -5,7 +5,6 @@ import { Check, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "./button4"
 import { Card } from "./card"
-import { HeaderSignUpDialog } from "./header-signup-dialog"
 
 interface BenefitProps {
   text: string
