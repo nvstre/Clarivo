@@ -187,9 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-1 px-100 text-center text-sm text-muted-foreground relative z-10">
-        <Footer2 />
-      </footer>
+      <Footer2 />
     </main>
   );
 }
