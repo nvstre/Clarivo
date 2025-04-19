@@ -135,10 +135,23 @@ function Header1() {
 
                 {/* Auth Buttons */}
                 <div className="flex items-center justify-end gap-2">
-                    <Button variant="ghost" className="border border-border rounded-lg px-4 py-2 hover:bg-muted transition">
-                        Contact us
-                    </Button>
-                    <div className="h-6 w-px bg-border" />
+                    <div className="flex items-center gap-4">
+                        <Button
+                            variant="ghost"
+                            size="lg"
+                            className="text-foreground hover:text-foreground/80"
+                        >
+                            Sign in
+                        </Button>
+                        <div className="hidden md:block h-6 w-px bg-border" />
+                        <Button
+                            variant="ghost"
+                            size="lg"
+                            className="hidden md:flex text-foreground hover:text-foreground/80"
+                        >
+                            Contact us
+                        </Button>
+                    </div>
                     <SignInDialog />
                     <HeaderSignUpDialog />
                 </div>

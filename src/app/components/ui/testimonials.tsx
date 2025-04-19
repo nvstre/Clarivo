@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "./testimonial-card"
+import { motion } from "framer-motion"
 
 interface TestimonialsSectionProps {
   title: string
@@ -26,31 +27,29 @@ export function TestimonialsSection({
       "py-12 sm:py-24 md:py-32 px-0",
       className
     )}>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
-        <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
-          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
-            {title}
-          </h2>
-          <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             {description}
           </p>
         </div>
-
-        <div className="relative w-full overflow-hidden">
-          <div className="flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-row">
-              {testimonials.map((testimonial, i) => (
-                <TestimonialCard 
-                  key={i}
-                  {...testimonial}
-                  className="min-w-[280px] sm:min-w-[320px]"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative bg-card rounded-2xl p-6 shadow-lg overflow-hidden"
+            >
+              <TestimonialCard 
+                {...testimonial}
+                className="min-w-[280px] sm:min-w-[320px]"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
