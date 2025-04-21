@@ -7,6 +7,7 @@ import { Button } from './button';
 import { HeaderSignUpDialog } from './header-signup-dialog';
 import { AIInputWithLoading } from './ai-input-with-loading';
 
+
 interface Message {
   id: number;
   text: string;
@@ -62,9 +63,6 @@ export function Hero() {
                 Read our launch article <MoveRight className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </a>
-            <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
-              Discover how ClarivoAI is revolutionizing personal growth with specialized AI guidance
-            </p>
           </div>
           <div className="flex gap-3 sm:gap-4 flex-col">
             <h1 className="text-3xl sm:text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
