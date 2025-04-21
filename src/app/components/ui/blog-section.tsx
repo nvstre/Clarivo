@@ -14,333 +14,51 @@ import { useState } from "react";
 
 const articles = [
   {
-    title: "How AI Helped Me Break My Self-Sabotaging Habits",
-    description: "A personal journey of transformation and the unexpected ways AI coaching revealed my behavior patterns.",
-    date: "March 15, 2024",
-    author: "Alex Rivera",
-    readTime: "6 min read",
-    image: "/blog/ai-revolution.jpg",
-    content: `Six months ago, I was stuck in a cycle of starting projects and never finishing them. I'd get excited, dive in, and then abandon ship when things got challenging. It was frustrating, and traditional self-help books weren't cutting it. That's when I decided to try AI-powered coaching, and it changed everything.
-
-Here's what I discovered about breaking self-sabotaging patterns:
-
-1. Pattern Recognition That Blew My Mind
-The AI coach spotted something I never noticed – I was quitting projects exactly 3 weeks in, right when the initial excitement wore off. This wasn't random; it was a pattern tied to my fear of imperfect outcomes.
-
-2. Micro-Interventions That Actually Worked
-Instead of grand plans, the AI suggested tiny daily check-ins. When I felt the urge to quit, I'd log my thoughts. The AI analyzed these patterns and helped me develop specific counter-strategies. For example, I now have a "3-week preparation plan" for every new project.
-
-3. Real-Time Guidance When It Matters Most
-The game-changer was getting support exactly when I needed it. Late-night doubt spiral? The AI coach was there with personalized exercises based on my past successes. It wasn't generic advice – it was insights drawn from my own experiences.
-
-4. The Science Behind the Change
-What makes AI coaching different is its ability to:
-- Track subtle behavior patterns over time
-- Adapt strategies based on what actually works for you
-- Provide objective feedback without judgment
-- Offer support at any time, not just during scheduled sessions
-
-5. Unexpected Benefits
-Beyond breaking my quit-cycle, I discovered:
-- Better sleep (anxiety about unfinished projects decreased)
-- Improved relationships (less venting to friends about failed projects)
-- More energy (not constantly starting over takes less emotional toll)
-
-6. The Reality Check
-It wasn't all smooth sailing. The first month was uncomfortable as the AI helped me face my patterns. But unlike human coaches who might let me deflect, the AI kept bringing me back to the data – my actual behavior patterns.
-
-Today, I'm not just starting projects; I'm finishing them. My latest project is in month 4 – a personal record. The key wasn't just willpower or motivation; it was understanding my patterns and having consistent, personalized support.
-
-If you're stuck in your own self-sabotaging cycles, consider this: sometimes the best mirror is an AI that can reflect your patterns back to you with perfect clarity.`
-  },
-  {
-    title: "From Overwhelmed to Organized: My 30-Day Reset",
-    description: "How I used AI guidance to transform my chaotic life into a structured success story, one small change at a time.",
-    date: "March 12, 2024",
-    author: "Maya Chen",
+    title: "ClarivoAI: Revolutionizing Personal Growth with Specialized AI",
+    description: "Our journey to create an AI that truly understands personal development and goal achievement.",
+    date: "March 20, 2024",
+    author: "Clarivo Team",
     readTime: "5 min read",
-    image: "/blog/mental-barriers.jpg",
-    content: `"I don't have enough time" was my daily mantra. Between a demanding job, side projects, and personal life, I was drowning in to-do lists. Then I took the 30-day Clarivo challenge, and everything changed. Here's my unfiltered experience.
+    image: "/blog/ai-revolution.jpg",
+    content: `Today marks a significant milestone in our journey - the launch of ClarivoAI, a specialized AI assistant designed to help you achieve your personal goals and transform your life.
 
-Week 1: The Reality Check
-The AI's first task surprised me – do nothing new. Instead, it tracked my current patterns:
-- I was context-switching 40+ times per day
-- My "quick email checks" averaged 45 minutes
-- I had 7 half-finished projects consuming mental space
+The Problem We're Solving:
+Have you ever found yourself stuck in an endless cycle of research, reading countless books and guides, yet making no real progress? You're not alone. The modern world bombards us with information, but what we truly need is clear direction and personalized guidance.
 
-Week 2: The Mindset Shift
-Rather than adding more productivity tools, the AI helped me eliminate:
-- Deleted 4 "productivity" apps
-- Reduced Slack channels from 15 to 5
-- Set up "focus blocks" with actual boundaries
+Why We're Different:
+While general AI assistants like ChatGPT can provide broad information, they lack the depth and specialization needed for effective personal development. That's where ClarivoAI comes in. Our AI is specifically trained in the field of self-improvement, making it uniquely qualified to guide you through your personal growth journey.
 
-Week 3: The Systems Upgrade
-This is where things got interesting. The AI analyzed my peak performance times and helped design a personalized workflow:
-- Deep work during my natural energy peaks (8-11 AM)
-- Quick tasks batched into 30-minute power sessions
-- New meeting rules: 25 or 50 minutes only
+Our Vision:
+ClarivoAI is more than just another AI chatbot. It's a specialized companion that:
+- Understands the nuances of personal development
+- Provides clear, actionable direction
+- Helps you break through research paralysis
+- Offers personalized guidance based on your specific goals
 
-Week 4: The Integration
-The final week wasn't about new changes but cementing habits:
-- Morning planning reduced from 30 to 5 minutes
-- Energy tracking became automatic
-- Stress levels dropped noticeably
+What Sets Us Apart:
+1. Specialized Knowledge
+Unlike general AI models, ClarivoAI is trained specifically in self-improvement methodologies, psychology, and personal development strategies.
 
-The Real Results:
-1. Completed more in 6 hours than I used to in 9
-2. Reduced open browser tabs from 25+ to 5
-3. Actually finished a course I started (first time in years)
-4. Sleep improved by 1.5 hours average
+2. Clear Direction
+We help you move from endless research to actionable steps, providing clear objectives and timelines for your goals.
 
-Key Lessons Learned:
-1. More tools aren't the answer – better systems are
-2. AI coaching works because it's personalized and judgment-free
-3. Small, consistent changes beat massive overhauls
-4. Data doesn't lie – seeing my patterns was eye-opening
+3. Personalized Approach
+Our AI adapts to your unique situation, offering guidance that's tailored to your specific needs and circumstances.
 
-What Makes AI Coaching Different:
-- It never gets tired of reminding you about your goals
-- Adapts to your progress in real-time
-- Provides objective feedback without emotional baggage
-- Available 24/7 for quick check-ins
+4. Focused Scope
+We're not trying to be everything to everyone. We focus on what we do best - helping you achieve personal growth and life transformation.
 
-The Unexpected Benefits:
-- Better relationships (I'm actually present now)
-- Improved decision-making (less mental clutter)
-- More creative ideas (space to think!)
-- Reduced anxiety about productivity
+The Future:
+As we grow, we plan to:
+- Expand our AI's capabilities in personal development
+- Add more structured goal-setting features
+- Develop community aspects for shared growth
+- Implement advanced progress tracking
 
-Is It Perfect? No.
-You still have to do the work. The AI is a guide, not a magic solution. But having an objective partner that knows your patterns and goals is invaluable.
+Join Us on This Journey:
+We're excited to have you as part of the ClarivoAI community. Whether you're looking to improve your career, health, relationships, or personal development, we're here to help you achieve your goals with clarity and purpose.
 
-Looking Ahead:
-I'm keeping most of these changes. The best part? They don't feel like forced habits anymore – they're just how I work now. And for someone who tried every productivity system out there, that's nothing short of remarkable.`
-  },
-  {
-    title: "The Unexpected Way AI Improved My Fitness Journey",
-    description: "Moving beyond generic workout plans: How AI coaching adapted to my real-life schedule and finally made fitness stick.",
-    date: "March 8, 2024",
-    author: "James Cooper",
-    readTime: "7 min read",
-    image: "/blog/habit-formation.jpg",
-    content: `I've started and quit fitness journeys more times than I can count. Gym memberships, personal trainers, fitness apps – you name it, I've tried it. But something clicked when I started using AI coaching. Here's my three-month journey and what made this time different.
-
-The Old Pattern:
-- Start strong with a rigid plan
-- Miss a few days due to work/life
-- Feel guilty and give up entirely
-- Repeat every few months
-
-The AI Approach:
-Instead of a one-size-fits-all plan, the AI coach built around my life:
-
-1. Smart Scheduling
-- Analyzed my calendar patterns
-- Suggested workout times based on my actual availability
-- Automatically adjusted when meetings shifted
-- Created backup plans for busy days
-
-2. Adaptive Workouts
-- Started with 10-minute sessions (seemed too easy)
-- Gradually increased based on my energy levels
-- Mixed high and low intensity based on sleep data
-- Offered alternatives when motivation was low
-
-3. Progress Tracking That Made Sense
-- Focused on consistency over perfection
-- Tracked energy levels, not just reps
-- Showed patterns between sleep, diet, and performance
-- Celebrated small wins I would've missed
-
-Real Results After 90 Days:
-- 80% workout completion rate (previous best: 40%)
-- Down 15 pounds without crash dieting
-- Actually enjoying exercise (biggest surprise)
-- Stress levels noticeably lower
-
-The Game-Changing Features:
-
-1. Dynamic Adjustments
-When I had a bad night's sleep, the AI adjusted the next day's workout instead of pushing me to stick to the original plan.
-
-2. Pattern Recognition
-- Identified that I never complete evening workouts
-- Showed how my mood affects performance
-- Spotted when I was overtraining
-- Predicted potential skip days before they happened
-
-3. Psychological Support
-- No guilt trips about missed workouts
-- Reframed setbacks as data points
-- Provided science-based motivation
-- Offered practical solutions instead of generic encouragement
-
-4. Lifestyle Integration
-- Suggested walking meetings for busy days
-- Created 5-minute desk exercises
-- Provided travel-friendly workout alternatives
-- Adapted to my social schedule
-
-Common Challenges and Solutions:
-
-1. Initial Skepticism
-I thought AI couldn't replace human coaching. Truth is, it offered something different – consistent, data-driven support without judgment.
-
-2. Too-Easy Start
-The initial workouts felt too simple, but this prevented burnout and built sustainable habits.
-
-3. Tech Dependence
-I worried about relying on technology, but the AI actually taught me to be more in tune with my body.
-
-Looking Forward:
-I'm not just fitter; I'm smarter about fitness. The AI coach taught me to:
-- Listen to my body
-- Adapt instead of quit
-- Focus on trends over daily metrics
-- Build sustainable habits
-
-Key Takeaways:
-1. Consistency beats intensity
-2. Personalization is crucial
-3. Data helps, but feeling good matters more
-4. Small adjustments > complete overhauls
-
-For anyone struggling with fitness consistency, consider this: sometimes the best coach isn't the one pushing you hardest, but the one helping you stick with it longest.`
-  },
-  {
-    title: "Finding Balance: A Tech Worker's Guide to Digital Wellness",
-    description: "Real strategies for maintaining mental health and productivity in an always-connected world, backed by personal experience and AI insights.",
-    date: "March 5, 2024",
-    author: "Sophia Martinez",
-    readTime: "6 min read",
-    image: "/blog/digital-wellness.jpg",
-    content: `As a software developer, I spent 12+ hours a day staring at screens. Burnout wasn't just likely; it was inevitable. Here's how AI coaching helped me find balance without sacrificing productivity.
-
-The Breaking Point:
-- Constant headaches
-- Sleep problems
-- Weekend anxiety
-- Declining code quality
-- Strained relationships
-
-The AI-Guided Reset:
-
-1. Smart Boundaries
-Instead of a strict "digital detox," the AI helped create sustainable limits:
-- 50-minute focus blocks with 10-minute breaks
-- Screen-free first hour after waking
-- No-phone zones in the house
-- Auto-DND during deep work
-
-2. Data-Driven Insights
-The AI tracked my patterns and revealed:
-- Peak coding hours (9-11 AM, 4-6 PM)
-- Meeting fatigue patterns
-- Optimal break timing
-- Screen time impact on sleep
-
-3. Practical Solutions
-Real changes that actually stuck:
-- Morning routine without phones
-- Nature walks between coding sessions
-- Blue light management
-- Mindful notification settings
-
-The 4-Week Transformation:
-
-Week 1: Awareness
-- Tracked digital habits
-- Identified trigger points
-- Set baseline metrics
-- Created environment changes
-
-Week 2: Implementation
-- Established new routines
-- Added physical movement
-- Modified workspace
-- Adjusted notification settings
-
-Week 3: Optimization
-- Fine-tuned work patterns
-- Enhanced break activities
-- Improved sleep routine
-- Balanced social media use
-
-Week 4: Integration
-- Solidified new habits
-- Created contingency plans
-- Established maintenance mode
-- Set up progress tracking
-
-Measurable Results:
-- Productivity up 30%
-- Sleep quality improved 60%
-- Headaches reduced by 80%
-- Better code reviews
-- Improved team communication
-
-The Surprising Benefits:
-
-1. Better Code Quality
-- Fewer bugs in my code
-- More creative solutions
-- Improved documentation
-- Faster problem-solving
-
-2. Enhanced Creativity
-- More innovative approaches
-- Better architectural decisions
-- Increased learning capacity
-- Improved technical writing
-
-3. Stronger Relationships
-- More present in meetings
-- Better team collaboration
-- Improved home life
-- Enhanced communication
-
-4. Physical Improvements
-- Better posture
-- Reduced eye strain
-- More energy
-- Better sleep
-
-Practical Tips for Tech Workers:
-
-1. Environment Design
-- Proper monitor height
-- Natural light exposure
-- Standing desk intervals
-- Clean workspace policy
-
-2. Digital Habits
-- Regular inbox clearing
-- Structured notification times
-- Focus mode automation
-- Calendar blocking
-
-3. Physical Integration
-- Micro-movement breaks
-- Desk exercises
-- Walking meetings
-- Stretching routines
-
-4. Mental Wellness
-- Mindfulness practices
-- Stress monitoring
-- Regular reflection
-- Progress celebration
-
-The Role of AI Support:
-- Constant but non-intrusive
-- Data-driven suggestions
-- Personalized adjustments
-- Progress tracking
-
-Looking Forward:
-Digital wellness isn't about rejecting technology; it's about using it intentionally. With AI coaching, I found a sustainable way to stay productive while protecting my wellbeing.
-
-Remember: Technology should work for you, not the other way around. Sometimes it takes an AI to teach us how to be more human.`
+Start your journey today and experience the difference that specialized AI guidance can make in your life.`
   }
 ];
 

@@ -1,17 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import scrollImg from "./components/ui/images/scroll.png";
 
 import { Hero } from "./components/ui/animated-hero";
 import { BeamsBackground } from "./components/ui/background";
 import { Header1 } from "./components/ui/header";
 import { ContainerScroll } from "./components/ui/container-scroll-animation";
-import { FeaturesSectionWithBentoGrid } from "./components/ui/feature-section-with-bento-grid";
 import { Blog } from "./components/ui/blog-section";
 import { Footer2 } from "./components/ui/footer2";
 import { PricingCard } from "./components/ui/PricingCard"; 
 import { FAQ } from "./components/ui/faq-section";
 import { TestimonialsSection } from "./components/ui/testimonials";
 import VideoPlayer from "./components/ui/video-player";
+import SecondBentoGrid from "./components/ui/second-bento-grid";
 
 export default function Home() {
   const testimonials = [
@@ -19,33 +20,33 @@ export default function Home() {
       author: {
         name: "Alex Chen",
         handle: "@alexc_dev",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        avatar: "/default-avatar.png"
       },
-      text: "Clarivo came into my life when I was at a career crossroads. The AI coach helped me map out my strengths and create a clear path forward. 3 months later, I'm in a leadership role I never thought possible! The clarity it provides is unmatched 🎯"
+      text: "ClarivoAI's personalized coaching helped me break through my career plateau. The AI's insights into my strengths and growth areas were spot-on. Within 3 months, I've gained clarity on my career path and landed a leadership role I never thought possible! 🎯"
     },
     {
       author: {
         name: "Sarah Miller",
         handle: "@sarah.wellness",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+        avatar: "/default-avatar.png"
       },
-      text: "As someone juggling family and personal growth, Clarivo gets it. Their micro-goals approach fits perfectly into my busy schedule. Started with the free version but the results were so good, I upgraded within weeks. Best investment in myself this year! ✨"
+      text: "As a busy professional, I struggled to maintain my personal growth journey. ClarivoAI's micro-goals system and daily check-ins keep me accountable. The AI coach adapts to my schedule and provides just the right amount of guidance. Best investment in my personal development! ✨"
     },
     {
       author: {
         name: "Marcus Thompson",
         handle: "@marc_fit",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+        avatar: "/default-avatar.png"
       },
-      text: "Clarivo's progress tracking is incredible. When my fitness journey plateaued, the AI analyzed my patterns and suggested small but powerful changes. 6 weeks in: down 12 lbs and crushing PRs I didn't think were possible. Pro tier is worth every cent 💪"
+      text: "What sets ClarivoAI apart is how it connects different aspects of personal growth. When I hit a plateau in my fitness journey, the AI analyzed patterns across my nutrition, sleep, and stress levels. The holistic approach led to breakthroughs I couldn't achieve alone. 💪"
     },
     {
       author: {
         name: "Priya Patel",
         handle: "@priya.creates",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+        avatar: "/default-avatar.png"
       },
-      text: "I was hesitant about another AI tool, but Clarivo is different. It's like having a mentor who evolves with you. The way it connects dots in your personal development journey is mind-blowing. 2 months with Clarivo = 3 goals achieved + newfound confidence ⭐"
+      text: "I've tried many personal development tools, but ClarivoAI feels like having a mentor who truly understands me. The way it tracks progress and provides actionable insights is revolutionary. Two months in, and I've achieved goals I've been struggling with for years! ⭐"
     }
   ];
 
@@ -79,7 +80,7 @@ export default function Home() {
           }
         >
           <Image
-            src="/2025.png"
+            src={scrollImg}
             alt="hero"
             height={720}
             width={1400}
@@ -89,8 +90,8 @@ export default function Home() {
         </ContainerScroll>
       </section>
 
-      <section id="features" className="py-16 relative z-10">
-        <FeaturesSectionWithBentoGrid />
+      <section className="py-16 relative z-10">
+        <SecondBentoGrid />
       </section>
 
       <section id="demo" className="w-full px-6 py-12 relative z-10">
