@@ -31,7 +31,6 @@ export function AIInputWithLoading({
 }: AIInputWithLoadingProps) {
   const [inputValue, setInputValue] = useState("");
   const [submitted, setSubmitted] = useState(autoAnimate);
-  const [isAnimating, _] = useState(false);
   
   const { textareaRef, adjustHeight } = useAutoResizeTextarea({
     minHeight,
@@ -42,7 +41,7 @@ export function AIInputWithLoading({
     let timeoutId: NodeJS.Timeout;
 
     const runAnimation = () => {
-      if (!isAnimating) return;
+      if (!autoAnimate) return;
       setSubmitted(true);
       timeoutId = setTimeout(() => {
         setSubmitted(false);
@@ -50,12 +49,12 @@ export function AIInputWithLoading({
       }, loadingDuration);
     };
 
-    if (isAnimating) {
+    if (autoAnimate) {
       runAnimation();
     }
 
     return () => clearTimeout(timeoutId);
-  }, [isAnimating, loadingDuration, thinkingDuration]);
+  }, [autoAnimate, loadingDuration, thinkingDuration]);
 
   const handleSubmit = async () => {
     if (!inputValue.trim() || submitted) return;
@@ -63,7 +62,7 @@ export function AIInputWithLoading({
     setSubmitted(true);
     await onSubmit?.(inputValue);
     setInputValue("");
-    adjustHeight(true);
+    adjustHeight();
     
     setTimeout(() => {
       setSubmitted(false);

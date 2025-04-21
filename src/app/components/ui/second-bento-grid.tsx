@@ -43,7 +43,7 @@ export default function SecondBentoGrid() {
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Progress Tracking</p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Visualize your growth with intuitive progress tracking. See how far you've come and what's next on your journey.
+                  Visualize your growth with intuitive progress tracking. See how far you&apos;ve come and what&apos;s next on your journey.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
