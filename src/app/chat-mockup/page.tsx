@@ -213,22 +213,22 @@ export default function ChatMockupPage() {
             </div>
           </div>
           {/* Chat Header */}
-          <div className="px-12 mb-4">
-            <h1 className="text-3xl font-bold text-[#23244a]">Chat</h1>
+          <div className="px-12 mb-4 flex justify-center">
+            <h1 className="text-3xl font-bold text-[#23244a] text-center">Chat</h1>
           </div>
           {/* Chat Tabs & Tools */}
-          <div className="px-12 flex items-center gap-4 mb-4">
-            <div className="flex bg-[#f3f6fa] rounded-full p-1 gap-1">
+          <div className="px-12 flex flex-col items-center gap-2 mb-4">
+            <div className="flex bg-[#f3f6fa] rounded-full p-1 gap-1 justify-center">
               <button className="px-3 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white font-semibold text-[#7b5cff] shadow-sm text-xs sm:text-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Basic</button>
               <button className="px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-[#5f749b] font-semibold text-xs sm:text-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Advanced</button>
             </div>
-            <div className="ml-2 sm:ml-6 flex items-center gap-2 text-[#5f749b] text-xs sm:text-sm">
+            <div className="flex items-center gap-2 text-[#5f749b] text-xs sm:text-sm justify-center">
               No tools added <ChevronDown className="w-4 h-4" />
             </div>
           </div>
           {/* Chat Card(s) */}
           <div className="px-2 sm:px-12 flex flex-col gap-4 items-center w-full">
-            <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 flex flex-col gap-2 w-full max-w-2xl h-full min-h-0">
+            <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 flex flex-col gap-2 w-full max-w-3xl h-full min-h-0">
               <div className="flex items-center gap-2 mb-2">
                 <div className="rounded-full bg-[#f3f6fa] p-2">
                   <Sparkles className="w-5 h-5 text-[#7b5cff]" />
@@ -317,7 +317,7 @@ function SidebarItem({ icon, label, active, pro, onClick, highlight }: { icon: R
 
 function SidebarSubItem({ label, onClick }: { label: string; onClick?: () => void }) {
   return (
-    <div className="text-[var(--color-accent)] text-sm px-3 py-1 rounded hover:bg-[var(--color-lighter)] cursor-pointer transition" onClick={onClick}>
+    <div className="text-[#23244a] font-semibold text-sm px-3 py-1 rounded hover:bg-[var(--color-lighter)] cursor-pointer transition" onClick={onClick}>
       {label}
     </div>
   )
