@@ -4,7 +4,7 @@ import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, ChevronDown
 import { useState, useRef, useEffect } from "react"
 
 const HF_API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-base"
-const HF_API_KEY = process.env.NEXT_PUBLIC_HF_API_KEY // Set this in your .env.local file
+const HF_API_KEY = "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"
 
 async function fetchAIResponse(userMessage: string): Promise<string> {
   const response = await fetch(HF_API_URL, {
