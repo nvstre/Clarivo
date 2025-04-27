@@ -1,6 +1,6 @@
 "use client"
 
-import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, ChevronDown, Edit2, Sparkles, RefreshCw } from "lucide-react"
+import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, ChevronDown, Sparkles, RefreshCw } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 
 const HF_API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-base"
