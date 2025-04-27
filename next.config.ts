@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
       'e.snmc.io',            // New domain added for the error
       'ui.aceternity.com',    // Already added
       'assets.aceternity.com', // New domain added to fix the error
-      'i.scdn.co'
+      'i.scdn.co',
+      'randomuser.me',
     ],
   },
 };
