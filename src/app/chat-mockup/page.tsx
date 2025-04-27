@@ -3,24 +3,34 @@
 import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, ChevronDown, Sparkles, RefreshCw, Menu } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 
-const HF_API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-base"
+const HF_API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
 const HF_API_KEY = "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"
 
 async function fetchAIResponse(userMessage: string): Promise<string> {
+  // Format the prompt for Zephyr-7B-beta (chat template)
+  const prompt = `<|user|>\n${userMessage}</s>\n<|assistant|>\n`
   const response = await fetch(HF_API_URL, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${HF_API_KEY}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ inputs: userMessage }),
+    body: JSON.stringify({ inputs: prompt }),
   })
   const data = await response.json()
+  if (data.error) {
+    return `[Error from AI: ${data.error}]`
+  }
   if (Array.isArray(data) && data[0]?.generated_text) {
-    return data[0].generated_text.trim()
+    // Remove Zephyr prompt prefix if present
+    const raw = data[0].generated_text.trim();
+    const cleaned = raw.replace(/^([\s\S]*?<\|assistant\|>\n)/, '');
+    return cleaned;
   }
   if (typeof data.generated_text === "string") {
-    return data.generated_text.trim()
+    const raw = data.generated_text.trim();
+    const cleaned = raw.replace(/^([\s\S]*?<\|assistant\|>\n)/, '');
+    return cleaned;
   }
   return "[No response from AI]"
 }
@@ -209,16 +219,16 @@ export default function ChatMockupPage() {
           {/* Chat Tabs & Tools */}
           <div className="px-12 flex items-center gap-4 mb-4">
             <div className="flex bg-[#f3f6fa] rounded-full p-1 gap-1">
-              <button className="px-6 py-2 rounded-full bg-white font-semibold text-[#7b5cff] shadow-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Basic</button>
-              <button className="px-6 py-2 rounded-full text-[#5f749b] font-semibold" onClick={() => window.alert('Coming soon!')}>Clarivo Advanced</button>
+              <button className="px-3 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white font-semibold text-[#7b5cff] shadow-sm text-xs sm:text-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Basic</button>
+              <button className="px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-[#5f749b] font-semibold text-xs sm:text-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Advanced</button>
             </div>
-            <div className="ml-6 flex items-center gap-2 text-[#5f749b] text-sm">
+            <div className="ml-2 sm:ml-6 flex items-center gap-2 text-[#5f749b] text-xs sm:text-sm">
               No tools added <ChevronDown className="w-4 h-4" />
             </div>
           </div>
           {/* Chat Card(s) */}
           <div className="px-2 sm:px-12 flex flex-col gap-4 items-center w-full">
-            <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 flex flex-col gap-2 w-full max-w-lg h-full min-h-0">
+            <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 flex flex-col gap-2 w-full max-w-2xl h-full min-h-0">
               <div className="flex items-center gap-2 mb-2">
                 <div className="rounded-full bg-[#f3f6fa] p-2">
                   <Sparkles className="w-5 h-5 text-[#7b5cff]" />
@@ -231,7 +241,7 @@ export default function ChatMockupPage() {
                   })()}
                 </div>
               </div>
-              <div className="flex-1 min-h-0 text-[#23244a] text-sm leading-relaxed whitespace-pre-line overflow-y-auto">
+              <div className="flex-1 min-h-0 text-[#23244a] text-sm leading-relaxed whitespace-pre-line overflow-y-auto max-h-96">
                 {messages.length === 0 && !loading ? (
                   <div className="text-[#5f749b] flex flex-col items-center gap-2 py-8">
                     <Sparkles className="w-8 h-8 mb-2 text-[#7b5cff]" />
