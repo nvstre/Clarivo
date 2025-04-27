@@ -1,19 +1,10 @@
 "use client"
 
-import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, Sun, ChevronDown, Edit2, Sparkles, RefreshCw, Menu } from "lucide-react"
+import { Layers, BarChart, Calendar, User, Search, Bell, Info, Moon, ChevronDown, Edit2, Sparkles, RefreshCw, Menu } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 
-const PALETTE = {
-  white: "#ffffff",
-  light: "#f0f7fa",
-  lighter: "#d7f9ff",
-  blue: "#afcbff",
-  accent: "#5f749b",
-  navy: "#0e1c36",
-}
-
 const HF_API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-base"
-const HF_API_KEY = "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"
+const HF_API_KEY = process.env.NEXT_PUBLIC_HF_API_KEY // Set this in your .env.local file
 
 async function fetchAIResponse(userMessage: string): Promise<string> {
   const response = await fetch(HF_API_URL, {
@@ -35,13 +26,11 @@ async function fetchAIResponse(userMessage: string): Promise<string> {
 }
 
 export default function ChatMockupPage() {
-  const [theme, setTheme] = useState("light")
   const [messages, setMessages] = useState<{ sender: "user" | "assistant"; text: string }[]>([])
   const [input, setInput] = useState("")
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const chatEndRef = useRef<HTMLDivElement>(null)
-  const [activeSidebar, setActiveSidebar] = useState('Chat')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -66,52 +55,6 @@ export default function ChatMockupPage() {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages, loading])
-
-  // Handler for sidebar items
-  function handleSidebarClick(label: string, pro?: boolean) {
-    if (pro) {
-      window.alert('Upgrade to PRO to access this feature!')
-      return
-    }
-    setActiveSidebar(label)
-  }
-
-  // Handler for sidebar subitems
-  function handleSidebarSubClick(label: string) {
-    window.alert(`${label} coming soon!`)
-  }
-
-  // Handler for PRO CTA
-  function handleProCTA() {
-    window.alert('Upgrade to PRO coming soon!')
-  }
-
-  // Handler for user/profile icon
-  function handleProfile() {
-    window.alert('Profile menu coming soon!')
-  }
-
-  // Handler for bell
-  function handleBell() {
-    window.alert('No new notifications.')
-  }
-
-  // Handler for info
-  function handleInfo() {
-    window.alert('Help & Info coming soon!')
-  }
-
-  // Handler for edit (pencil)
-  function handleEdit() {
-    window.alert('Edit message coming soon!')
-  }
-
-  // Handler for search
-  function handleSearchKey(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
-      window.alert('Search coming soon!')
-    }
-  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f7fafd] overflow-x-hidden">
@@ -263,9 +206,6 @@ export default function ChatMockupPage() {
                     return lastUserMsg
                   })()}
                 </div>
-                <button className="text-[#5f749b] hover:text-[#7b5cff]" onClick={handleEdit}>
-                  <Edit2 className="w-4 h-4" />
-                </button>
               </div>
               <div className="flex-1 min-h-0 text-[#23244a] text-sm leading-relaxed whitespace-pre-line overflow-y-auto">
                 {messages.length === 0 && !loading ? (
