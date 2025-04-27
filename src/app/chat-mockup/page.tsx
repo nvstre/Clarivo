@@ -93,7 +93,7 @@ export default function ChatMockupPage() {
               </div>
             </div>
             <nav className="flex flex-col gap-2">
-              <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} />
+              <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} highlight />
               <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro onClick={() => handleSidebarItemClick('My Projects', true)} />
               <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro onClick={() => handleSidebarItemClick('Insights', true)} />
               <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro onClick={() => handleSidebarItemClick('Progress Tracking', true)} />
@@ -139,7 +139,7 @@ export default function ChatMockupPage() {
                   </div>
                 </div>
                 <nav className="flex flex-col gap-2">
-                  <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} />
+                  <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} highlight />
                   <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro onClick={() => handleSidebarItemClick('My Projects', true)} />
                   <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro onClick={() => handleSidebarItemClick('Insights', true)} />
                   <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro onClick={() => handleSidebarItemClick('Progress Tracking', true)} />
@@ -292,10 +292,10 @@ export default function ChatMockupPage() {
   )
 }
 
-function SidebarItem({ icon, label, active, pro, onClick }: { icon: React.ReactNode; label: string; active?: boolean; pro?: boolean; onClick?: () => void }) {
+function SidebarItem({ icon, label, active, pro, onClick, highlight }: { icon: React.ReactNode; label: string; active?: boolean; pro?: boolean; onClick?: () => void; highlight?: boolean }) {
   return (
     <div
-      className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition font-medium text-base ${active ? "bg-[var(--color-lighter)] text-[var(--color-blue)]" : "text-[var(--color-navy)] hover:bg-[var(--color-lighter)]"}`}
+      className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition font-medium text-base ${highlight || active ? "bg-[#e6eaff] text-[#4f8cff] font-bold" : "text-[var(--color-navy)] hover:bg-[var(--color-lighter)]"}`}
       onClick={onClick}
     >
       {icon}
