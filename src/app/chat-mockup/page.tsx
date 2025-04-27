@@ -56,6 +56,30 @@ export default function ChatMockupPage() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages, loading])
 
+  // Add handlers for sidebar and top bar buttons
+  function handleSidebarItemClick(label: string, pro: boolean) {
+    if (pro) {
+      window.alert('Upgrade to PRO to access this feature!')
+    } else {
+      window.alert(`${label} coming soon!`)
+    }
+  }
+  function handleSidebarSubItemClick(label: string) {
+    window.alert(`${label} coming soon!`)
+  }
+  function handleProfileClick() {
+    window.alert('Profile menu coming soon!')
+  }
+  function handleBellClick() {
+    window.alert('No new notifications.')
+  }
+  function handleInfoClick() {
+    window.alert('Help & Info coming soon!')
+  }
+  function handleMoonClick() {
+    window.alert('Theme switching coming soon!')
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-[#f7fafd] overflow-x-hidden">
       <div className="flex flex-1 w-full max-w-full overflow-x-hidden">
@@ -69,14 +93,14 @@ export default function ChatMockupPage() {
               </div>
             </div>
             <nav className="flex flex-col gap-2">
-              <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active />
-              <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro />
-              <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro />
-              <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro />
+              <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} />
+              <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro onClick={() => handleSidebarItemClick('My Projects', true)} />
+              <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro onClick={() => handleSidebarItemClick('Insights', true)} />
+              <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro onClick={() => handleSidebarItemClick('Progress Tracking', true)} />
               <div className="ml-8 flex flex-col gap-1 mt-2">
-                <SidebarSubItem label="Weekly check-in" />
-                <SidebarSubItem label="Milestones" />
-                <SidebarSubItem label="Vision Board" />
+                <SidebarSubItem label="Weekly check-in" onClick={() => handleSidebarSubItemClick('Weekly check-in')} />
+                <SidebarSubItem label="Milestones" onClick={() => handleSidebarSubItemClick('Milestones')} />
+                <SidebarSubItem label="Vision Board" onClick={() => handleSidebarSubItemClick('Vision Board')} />
               </div>
             </nav>
             <div className="mt-10 bg-gradient-to-br from-[#7b5cff] to-[#4f8cff] rounded-2xl p-5 flex flex-col items-center text-white shadow-lg">
@@ -90,12 +114,12 @@ export default function ChatMockupPage() {
           </div>
           <div className="flex items-center gap-3 mt-8">
             <div className="rounded-full bg-[#f3f6fa] flex items-center justify-center w-10 h-10">
-              <User className="w-6 h-6 text-[#5f749b]" />
+              <User className="w-6 h-6 text-[#5f749b]" onClick={handleProfileClick} />
             </div>
             <div className="flex-1">
               <div className="font-medium text-[#23244a] text-sm leading-tight">Demo User</div>
             </div>
-            <button className="ml-auto text-[#5f749b] hover:text-[#7b5cff]">
+            <button className="ml-auto text-[#5f749b] hover:text-[#7b5cff]" onClick={handleProfileClick}>
               <User className="w-5 h-5" />
             </button>
           </div>
@@ -115,14 +139,14 @@ export default function ChatMockupPage() {
                   </div>
                 </div>
                 <nav className="flex flex-col gap-2">
-                  <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active />
-                  <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro />
-                  <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro />
-                  <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro />
+                  <SidebarItem icon={<Sparkles className="w-5 h-5" />} label="Chat" active onClick={() => handleSidebarItemClick('Chat', false)} />
+                  <SidebarItem icon={<Layers className="w-5 h-5" />} label="My Projects" pro onClick={() => handleSidebarItemClick('My Projects', true)} />
+                  <SidebarItem icon={<BarChart className="w-5 h-5" />} label="Insights" pro onClick={() => handleSidebarItemClick('Insights', true)} />
+                  <SidebarItem icon={<Calendar className="w-5 h-5" />} label="Progress Tracking" pro onClick={() => handleSidebarItemClick('Progress Tracking', true)} />
                   <div className="ml-8 flex flex-col gap-1 mt-2">
-                    <SidebarSubItem label="Weekly check-in" />
-                    <SidebarSubItem label="Milestones" />
-                    <SidebarSubItem label="Vision Board" />
+                    <SidebarSubItem label="Weekly check-in" onClick={() => handleSidebarSubItemClick('Weekly check-in')} />
+                    <SidebarSubItem label="Milestones" onClick={() => handleSidebarSubItemClick('Milestones')} />
+                    <SidebarSubItem label="Vision Board" onClick={() => handleSidebarSubItemClick('Vision Board')} />
                   </div>
                 </nav>
                 <div className="mt-10 bg-gradient-to-br from-[#7b5cff] to-[#4f8cff] rounded-2xl p-5 flex flex-col items-center text-white shadow-lg">
@@ -136,12 +160,12 @@ export default function ChatMockupPage() {
               </div>
               <div className="flex items-center gap-3 mt-8">
                 <div className="rounded-full bg-[#f3f6fa] flex items-center justify-center w-10 h-10">
-                  <User className="w-6 h-6 text-[#5f749b]" />
+                  <User className="w-6 h-6 text-[#5f749b]" onClick={handleProfileClick} />
                 </div>
                 <div className="flex-1">
                   <div className="font-medium text-[#23244a] text-sm leading-tight">Demo User</div>
                 </div>
-                <button className="ml-auto text-[#5f749b] hover:text-[#7b5cff]">
+                <button className="ml-auto text-[#5f749b] hover:text-[#7b5cff]" onClick={handleProfileClick}>
                   <User className="w-5 h-5" />
                 </button>
               </div>
@@ -165,17 +189,17 @@ export default function ChatMockupPage() {
               <input type="text" placeholder="Search" className="rounded-full bg-[#f3f6fa] px-4 py-2 pl-10 text-sm outline-none border border-transparent focus:border-[#7b5cff] transition w-56" />
               <Search className="absolute left-3 top-2.5 w-4 h-4 text-[#5f749b]" />
             </div>
-            <button className="text-[#5f749b] hover:text-[#7b5cff]">
+            <button className="text-[#5f749b] hover:text-[#7b5cff]" onClick={handleBellClick}>
               <Bell className="w-5 h-5" />
             </button>
-            <button className="text-[#5f749b] hover:text-[#7b5cff]">
+            <button className="text-[#5f749b] hover:text-[#7b5cff]" onClick={handleInfoClick}>
               <Info className="w-5 h-5" />
             </button>
-            <button className="text-[#5f749b] hover:text-[#7b5cff]">
+            <button className="text-[#5f749b] hover:text-[#7b5cff]" onClick={handleMoonClick}>
               <Moon className="w-5 h-5" />
             </button>
             <div className="rounded-full bg-[#f3f6fa] flex items-center justify-center w-9 h-9">
-              <User className="w-5 h-5 text-[#5f749b]" />
+              <User className="w-5 h-5 text-[#5f749b]" onClick={handleProfileClick} />
             </div>
           </div>
           {/* Chat Header */}
@@ -185,8 +209,8 @@ export default function ChatMockupPage() {
           {/* Chat Tabs & Tools */}
           <div className="px-12 flex items-center gap-4 mb-4">
             <div className="flex bg-[#f3f6fa] rounded-full p-1 gap-1">
-              <button className="px-6 py-2 rounded-full bg-white font-semibold text-[#7b5cff] shadow-sm">Clarivo Basic</button>
-              <button className="px-6 py-2 rounded-full text-[#5f749b] font-semibold">Clarivo Advanced</button>
+              <button className="px-6 py-2 rounded-full bg-white font-semibold text-[#7b5cff] shadow-sm" onClick={() => window.alert('Coming soon!')}>Clarivo Basic</button>
+              <button className="px-6 py-2 rounded-full text-[#5f749b] font-semibold" onClick={() => window.alert('Coming soon!')}>Clarivo Advanced</button>
             </div>
             <div className="ml-6 flex items-center gap-2 text-[#5f749b] text-sm">
               No tools added <ChevronDown className="w-4 h-4" />
