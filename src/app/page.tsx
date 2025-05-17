@@ -143,7 +143,7 @@ export default function Home() {
             <div className="relative group">
               <PricingCard
                 tier="Basic"
-                price="$29/mo"
+                price="$11.99/mo"
                 bestFor="Committing to a more structured, continuous journey of self-improvement with deeper insights and personalized strategies."
                 CTA="14-day free trial"
                 benefits={[
@@ -160,7 +160,7 @@ export default function Home() {
             <div className="relative group">
               <PricingCard
                 tier="Pro"
-                price="$57/mo"
+                price="$17.99/mo"
                 bestFor="Those who are fully committed to their transformation and want exclusive, AI guidance to unlock their full potential."
                 CTA="Get Pro access"
                 benefits={[
