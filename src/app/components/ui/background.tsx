@@ -25,6 +25,8 @@ interface Beam {
 
 function createBeam(width: number, height: number): Beam {
   const angle = -35 + Math.random() * 10;
+  const hues = [205, 195, 190, 200, 210, 185];
+  const hue = hues[Math.floor(Math.random() * hues.length)];
   return {
     x: Math.random() * width * 1.5 - width * 0.25,
     y: Math.random() * height * 1.5 - height * 0.25,
@@ -32,8 +34,8 @@ function createBeam(width: number, height: number): Beam {
     length: height * 3,
     angle: angle,
     speed: 0.8 + Math.random() * 1.5,
-    opacity: 0.6 + Math.random() * 0.3,
-    hue: Math.random() < 0.5 ? 220 : 190,
+    opacity: 0.7 + Math.random() * 0.3,
+    hue: hue,
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: 0.03 + Math.random() * 0.04,
   };
@@ -106,31 +108,31 @@ export function BeamsBackground({
         opacityMap[intensity];
 
       const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
-      gradient.addColorStop(0, `hsla(${beam.hue}, 100%, 85%, 0)`);
+      gradient.addColorStop(0, `hsla(${beam.hue}, 100%, 65%, 0)`);
       gradient.addColorStop(
         0.1,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.8})`
+        `hsla(${beam.hue}, 98%, 68%, ${pulsingOpacity * 0.8})`
       );
       gradient.addColorStop(
         0.3,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 1.2})`
+        `hsla(${beam.hue}, 98%, 68%, ${pulsingOpacity * 1.2})`
       );
       gradient.addColorStop(
         0.5,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 1.2})`
+        `hsla(${beam.hue}, 98%, 68%, ${pulsingOpacity * 1.2})`
       );
       gradient.addColorStop(
         0.7,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.8})`
+        `hsla(${beam.hue}, 98%, 68%, ${pulsingOpacity * 0.8})`
       );
       gradient.addColorStop(
         0.9,
-        `hsla(${beam.hue}, 100%, 85%, ${pulsingOpacity * 0.4})`
+        `hsla(${beam.hue}, 98%, 68%, ${pulsingOpacity * 0.4})`
       );
-      gradient.addColorStop(1, `hsla(${beam.hue}, 100%, 85%, 0)`);
+      gradient.addColorStop(1, `hsla(${beam.hue}, 100%, 65%, 0)`);
 
       ctx.fillStyle = gradient;
-      ctx.globalAlpha = 0.5;
+      ctx.globalAlpha = 0.7;
       ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
       ctx.restore();
     }

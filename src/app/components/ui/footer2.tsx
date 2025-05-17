@@ -26,12 +26,12 @@ interface MenuItem {
   
   const Footer2 = ({
     logo = {
-      src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==",
+      src: "/logo.jpg",
       alt: "Clarivo",
       title: "Clarivo",
       url: "/",
     },
-    tagline = "We the best",
+    tagline = "Your Personal Growth Companion",
     menuItems = [
       {
         title: "Product",

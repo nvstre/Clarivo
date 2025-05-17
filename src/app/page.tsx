@@ -8,7 +8,7 @@ import { Header1 } from "./components/ui/header";
 import { ContainerScroll } from "./components/ui/container-scroll-animation";
 import { Blog } from "./components/ui/blog-section";
 import { Footer2 } from "./components/ui/footer2";
-import { PricingCard } from "./components/ui/PricingCard"; 
+import { PricingCard } from "./components/ui/PricingCard";
 import { FAQ } from "./components/ui/faq-section";
 import { TestimonialsSection } from "./components/ui/testimonials";
 import VideoPlayer from "./components/ui/video-player";
@@ -50,7 +50,7 @@ export default function Home() {
     }
   ];
 
-  const videoSrc = "/yeat.mp4";
+  const videoSrc = "/taka.mp4";
 
   const VideoPlayerComponent = () => {
     return <VideoPlayer src={videoSrc} />;
@@ -191,4 +191,4 @@ export default function Home() {
       <Footer2 />
     </main>
   );
-}
+} 

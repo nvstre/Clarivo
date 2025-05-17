@@ -19,7 +19,7 @@ const articles = [
     date: "March 20, 2024",
     author: "Clarivo Team",
     readTime: "5 min read",
-    image: "/blog/ai-revolution.jpg",
+    image: "/banner.png",
     content: `Today marks a significant milestone in our journey - the launch of ClarivoAI, a specialized AI assistant designed to help you achieve your personal goals and transform your life.
 
 The Problem We're Solving:
